@@ -1,13 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="js/display.js"></script>
+  </head>
+  <body>
     <header>
-        <h1>AMD</h1>
+      <h1>AMD</h1>
     </header>
-</body>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="">Servicios</a></li>
+        <li><a href="">Contacto</a></li>
+      </ul>
+      <div class="hide"><i class="fa fa-bars" aria-hidden="true"></i> Menu</div>
+    </nav>
+
+    <article>
+        <div>
+            
+        </div>
+
+        <div>
+
+        </div>
+    </article>
+
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script>
+      $(".hide").on("click", function () {
+        $("nav ul").toggle("slow");
+      });
+
+      // Parche: al redimensionar, quitar style inline o mostrar/ocultar según el ancho
+      $(window).on("resize", function () {
+        if ($(window).width() > 768) {
+          // elimina cualquier 'display' inline que dejó jQuery para que mande el CSS
+          $("nav ul").removeAttr("style");
+        } else {
+          // opcional: ocultar cuando sea menor a 768 (si quieres)
+          // $("nav ul").hide();|
+        }
+      });
+
+      // Ejecutar una vez al cargar para asegurar estado correcto
+      $(document).ready(function () {
+        if ($(window).width() > 768) $("nav ul").removeAttr("style");
+        else $("nav ul").hide();
+      });
+    </script>
+
+  </body>
 </html>
