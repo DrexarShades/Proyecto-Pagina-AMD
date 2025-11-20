@@ -1,56 +1,53 @@
-:root{
-    --gradiennsss: linear-gradient(#ef0707, #bd0000);
-    --rojoam: #ca0505;
-    --rojosi: #bd0000
+:root {
+  --gradiennsss: linear-gradient(#ef0707, #bd0000);
+  --rojoam: #ca0505;
+  --rojosi: #bd0000;
 }
-
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: #f5f5f5;
 }
 
-header h1{
-    font-size: 32px;
-    color: white;
-    margin: 0;
-    
+header h1 {
+  font-size: 32px;
+  color: white;
+  margin: 0;
 }
 
-header{
-    padding: 20px;
-    background: var(--gradiennsss);
-
+header {
+  padding: 20px;
+  background: var(--gradiennsss);
 }
 
-nav{
-    background: var(--rojoam);
-    margin: 0;
-    position: relative;
-    bottom: 18px;
+nav {
+  background: var(--rojoam);
+  margin: 0;
+  position: relative;
+  bottom: 18px;
 }
 
-nav ul{
-    list-style: none;
-    overflow: hidden;
-    text-align: center;
+nav ul {
+  list-style: none;
+  overflow: hidden;
+  text-align: center;
 }
 
-nav ul li{
-    display: inline-block;
-    padding: 20px;
+nav ul li {
+  display: inline-block;
+  padding: 20px;
 }
 
-nav ul li:hover{
-    background-color: var(--rojosi);
+nav ul li:hover {
+  background-color: var(--rojosi);
 }
 
-nav ul li a{
-    text-decoration: none;  
-    color: white;
-    
+nav ul li a {
+  text-decoration: none;
+  color: white;
 }
 
 .hide {
@@ -74,35 +71,54 @@ nav ul li a{
   }
 
   nav ul {
-  display: none;
+    display: none;
   }
-  article div{
+  article div {
     width: 100px;
     height: 100px;
   }
-
 }
 
-article{
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+article {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
-article div{
-    background-color: black;
-    width: 200px;
-    height: 200px;
-    display: inline-flex;
-    border-radius: 20px;
-    gap: 30px;
+article div {
+  background-color: black;
+  width: 200px;
+  height: 200px;
+  display: inline-flex;
+  border-radius: 20px;
+  gap: 30px;
 }
 
-.vaina{
-    text-align: center;
-    display: inline-flex;
+.vaina {
+  text-align: center;
+  display: inline-flex;
 }
 
-#conten{
-    text-align: center;
+#conten {
+  text-align: center;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 20px;
+  padding: 20px;
+}
+
+main {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  min-height: 400px;
+}
+
+aside {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
 }
