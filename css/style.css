@@ -23,6 +23,12 @@ header {
   background: var(--gradiennsss);
 }
 
+header img{
+  float: left;
+  position: relative;
+  bottom: 50px;
+}
+
 nav {
   background: var(--rojoam);
   margin: 0;
@@ -122,3 +128,11 @@ aside {
   padding: 20px;
   border-radius: 8px;
 }
+
+footer{
+            background: #222;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin-top: 30px;
+        }
