@@ -10,6 +10,7 @@ body {
   padding: 0;
   box-sizing: border-box;
   background: #f5f5f5;
+
 }
 
 header h1 {
@@ -141,3 +142,40 @@ footer{
             margin-top: 30px;
         }
 
+.servicios_pla-pro{
+  text-align: center;
+  margin: 30px;
+  padding: 30px;
+}
+
+.placas {
+  display: flex;          /* pone los .item uno al lado del otro */
+  gap: 100px;              /* espacio entre ellos */
+  justify-content: center;
+}
+
+.placa {
+  text-align: center;     /* centra el texto debajo de la imagen */
+}
+
+.placa img {
+  max-width: 150px;       /* tamaño de la imagen */
+  display: block;
+  margin: 40;
+}
+
+.procesadores {
+  display: flex;          /* pone los .item uno al lado del otro */
+  gap: 100px;              /* espacio entre ellos */
+  justify-content: center;
+}
+
+.proce {
+  text-align: center;     /* centra el texto debajo de la imagen */
+}
+
+.proce img {
+  max-width: 150px;       /* tamaño de la imagen */
+  display: block;
+  margin: 40;
+}
