@@ -10,7 +10,6 @@ body {
   padding: 0;
   box-sizing: border-box;
   background: #f5f5f5;
-
 }
 
 header h1 {
@@ -24,7 +23,7 @@ header {
   background: var(--gradiennsss);
 }
 
-header img{
+header img {
   float: left;
   position: relative;
   bottom: 50px;
@@ -107,7 +106,21 @@ article div {
 }
 
 #conten {
-  text-align: center;
+  text-align: center;    
+  justify-content: center;                                            
+}
+
+#conten button {
+  padding: 12px;
+  background: #b00020;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.contacto-contenedor{
+  margin: auto;
 }
 
 .container {
@@ -130,17 +143,17 @@ aside {
   border-radius: 8px;
 }
 
-.noso{
+.noso {
   margin: 0 30px;
 }
 
-footer{
-            background: #222;
-            color: white;
-            padding: 20px;
-            text-align: center;
-            margin-top: 30px;
-        }
+footer {
+  background: #222;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  margin-top: 30px;
+}
 
 .servicios_pla-pro{
   text-align: center;
@@ -149,33 +162,33 @@ footer{
 }
 
 .placas {
-  display: flex;          /* pone los .item uno al lado del otro */
-  gap: 100px;              /* espacio entre ellos */
+  display: flex;          
+  gap: 100px;              
   justify-content: center;
 }
 
 .placa {
-  text-align: center;     /* centra el texto debajo de la imagen */
+  text-align: center;     
 }
 
 .placa img {
-  max-width: 150px;       /* tamaño de la imagen */
+  max-width: 150px;       
   display: block;
   margin: 40;
 }
 
 .procesadores {
-  display: flex;          /* pone los .item uno al lado del otro */
-  gap: 100px;              /* espacio entre ellos */
+  display: flex;          
+  gap: 100px;              
   justify-content: center;
 }
 
 .proce {
-  text-align: center;     /* centra el texto debajo de la imagen */
+  text-align: center;     
 }
 
 .proce img {
-  max-width: 150px;       /* tamaño de la imagen */
+  max-width: 150px;       
   display: block;
   margin: 40;
 }
