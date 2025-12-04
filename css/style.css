@@ -18,67 +18,102 @@ header h1 {
   margin: 0;
 }
 
-header {
-  padding: 20px;
-  background: var(--gradiennsss);
-}
-
-header img {
-  float: left;
-  position: relative;
-  bottom: 50px;
-}
-
 nav {
   background: var(--rojoam);
-  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* centra el UL */
+  padding: 10px 20px;
   position: relative;
-  bottom: 18px;
+}
+
+
+nav-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
 }
 
 nav ul {
   list-style: none;
-  overflow: hidden;
-  text-align: center;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
 }
 
 nav ul li {
   display: inline-block;
-  padding: 20px;
-}
-
-nav ul li:hover {
-  background-color: var(--rojosi);
 }
 
 nav ul li a {
   text-decoration: none;
   color: white;
+  padding: 14px 20px;
+}
+nav ul li:hover {
+  background-color: var(--rojosi);
+}
+
+.nav-logo {
+  margin-right: auto;
+  order: 0;
+}
+
+#invis{
+  opacity: 0;
 }
 
 .hide {
-  padding: 16px;
+  display: none;
   font-size: 22px;
+  padding: 10px;
   background: var(--rojosi);
   color: white;
   cursor: pointer;
-  display: none;
+  margin-left: 10px;
 }
 
 @media (max-width: 768px) {
-  ul li {
-    width: 100%;
-    padding: 15px;
-    text-align: left;
+
+  nav {
+    justify-content: space-between;
   }
 
+  .nav-center {
+    width: 100%;
+  }
+
+  .nav-logo {
+    order: 0;
+    margin-left: 0;
+  }
+
+  /* mostrar botón */
   .hide {
     display: block;
+    order: 2;
   }
 
+  /* menú oculto inicialmente */
   nav ul {
     display: none;
+    flex-direction: column;
+    width: 100%;
+    background: var(--rojoam);
+    text-align: left;
+    padding: 0;
   }
+
+  nav ul li {
+    width: 100%;
+  }
+
+  nav ul li a {
+    display: block;
+    padding: 15px;
+  }
+
   article div {
     width: 100px;
     height: 100px;
