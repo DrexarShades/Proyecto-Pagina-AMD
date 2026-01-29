@@ -1,0 +1,151 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(
+        135deg,
+        #000000 0%,
+        #1a0000 30%,
+        #b11217 60%,
+        #ff1a1a 100%
+    );
+    flex-direction: column;
+}
+
+/* LOGO */
+.logo {
+    height: 60px;
+    margin: auto;
+    border-radius: 5px;
+}
+
+/* ESCENA 3D */
+.scene {
+    width: 300px;
+    height: 420px;
+    perspective: 1000px;
+}
+
+/* TARJETA */
+.card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s ease;
+}
+
+.card.flipped {
+    transform: rotateY(180deg);
+}
+
+
+/* CARAS */
+.face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.back {
+    transform: rotateY(180deg);
+}
+
+/* CONTENEDOR */
+.login-container {
+    background: rgba(0, 0, 0, 0.92); 
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 40px rgba(255, 0, 0, 0.4);
+    text-align: center;
+}
+.login-container::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.8);
+    border-radius: 8px;
+    z-index: -1;
+}
+
+
+/* FORM */
+.login-form h2 {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 1.5rem;
+}
+
+.login-form p{
+    color: #fff;
+}
+
+.input-group {
+    margin-bottom: 1rem;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #f3f3f3;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 4px;
+    border: none;
+}
+
+.input-group a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+/* CHECKBOX */
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#checkbox {
+    height: 18px;
+    width: auto;
+}
+
+/* BOTÓN */
+button {
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 4px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    transition: ease 0.4s;
+}
+
+button:hover {
+    background-color: #ff1a1a;
+}
+
+/* SWITCH */
+.switch {
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.switch span {
+    color: #ff1a1a;
+    cursor: pointer;
+    font-weight: bold;
+}

@@ -1,0 +1,105 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Servicios</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="js/display.js"></script>
+  </head>
+  <body>
+     <header>
+<nav>
+  <img src="img/amd-logo.png" class="nav-logo" height="40" alt="">
+    <div class="nav-center">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </div>
+<img src="img/amd-logo.png" class="nav-logo" id="invis" height="40" alt="">
+    
+
+    <div class="hide"><i class="fa fa-bars"></i></div>
+  </nav>
+    </header>
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script>
+      $(".hide").on("click", function () {
+        $("nav ul").toggle("slow");
+      });
+
+      // Parche: al redimensionar, quitar style inline o mostrar/ocultar según el ancho
+      $(window).on("resize", function () {
+        if ($(window).width() > 768) {
+          // elimina cualquier 'display' inline que dejó jQuery para que mande el CSS
+          $("nav ul").removeAttr("style");
+        } else {
+          // opcional: ocultar cuando sea menor a 768 (si quieres)
+          // $("nav ul").hide();|
+        }
+      });
+
+      // Ejecutar una vez al cargar para asegurar estado correcto
+      $(document).ready(function () {
+        if ($(window).width() > 768) $("nav ul").removeAttr("style");
+        else $("nav ul").hide();
+      });
+    </script>
+    
+  <main class="servicios_pla-pro">
+
+  <h1>Aqui encontraras los servicios disponibles de placas de video y procesadores gráficos.</h1><br><br>
+        <h2>Placas de video</h2><br>
+        <div class="placas">
+        
+          <div class="placa">
+       <img src="img/rx 9070xt.png" alt="" height="140" width="140">
+        <p><h4>RX 9070XT</h4></p>
+       <p> <h4>649$</h4></p>
+      </div>
+
+       <div class="placa">
+       <img src="img/rx 7800xt.png" alt="" height="140" width="140">
+      <p><h4>RX 7800XT</h4></p>
+      <p><h4>459$</h4></p>
+    </div>
+       
+    <div class="placa">
+    <img src="img/fsr.png" alt="" height="140">
+    <p><h4>Integración de fsr en <br>nuestras tarjetas de video</h4></p></div>
+
+</div>
+<br><br>
+
+
+
+        <h2>Procesadores</h2><br><br>
+      <div class="procesadores">
+        <div class="proce">
+        <img src="img/ryzen9.png" alt="" height="100" width="120">
+        <p><h4>Ryzen 9 9950X3D</h4></p>
+        <p><h4>449$</h4></p></div>
+          
+        <div class="proce">
+          <img src="img/ryzen 5 5600x.png" alt="" height="100" width="120">
+        <p><h4>Ryzen 5 5600X</h4></p>
+        <p><h4>229$</h4></p>
+        </div>
+
+        <div class="proce">
+          <img src="img/ryzen 7  7700x.png" alt="" height="100" width="120">
+        <p><h4>Ryzen 7 7700X</h4></p>
+        <p><h4>299$</h4></p>
+        </div>
+      
+      </div>
+      </main>
+  </body>
+</html>

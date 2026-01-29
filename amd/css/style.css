@@ -1,0 +1,247 @@
+html{
+  height: 100%;
+}
+
+:root {
+  --gradiennsss: linear-gradient(#ef0707, #bd0000);
+  --rojoam: #ca0505;
+  --rojosi: #bd0000;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Altura mínima del viewport */
+}
+
+.container{
+  flex-grow: 1;
+}
+
+header h1 {
+  font-size: 32px;
+  color: white;
+  margin: 0;
+}
+
+nav {
+  background: var(--rojoam);
+  display: flex;
+  align-items: center;
+  justify-content: center; /* centra el UL */
+  padding: 10px 20px;
+  position: relative;
+}
+
+
+nav-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li {
+  display: inline-block;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  padding: 14px 20px;
+}
+nav ul li:hover {
+  background-color: var(--rojosi);
+}
+
+.nav-logo {
+  margin-right: auto;
+  order: 0;
+}
+
+#invis{
+  opacity: 0;
+}
+
+.hide {
+  display: none;
+  font-size: 22px;
+  padding: 10px;
+  background: var(--rojosi);
+  color: white;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+@media (max-width: 768px) {
+
+  nav {
+    justify-content: space-between;
+  }
+
+  .nav-center {
+    width: 100%;
+  }
+
+  .nav-logo {
+    order: 0;
+    margin-left: 0;
+  }
+
+  /* mostrar botón */
+  .hide {
+    display: block;
+    order: 2;
+  }
+
+  /* menú oculto inicialmente */
+  nav ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: var(--rojoam);
+    text-align: left;
+    padding: 0;
+  }
+
+  nav ul li {
+    width: 100%;
+  }
+
+  nav ul li a {
+    display: block;
+    padding: 15px;
+  }
+
+  article div {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+article {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+article div {
+  background-color: black;
+  width: 200px;
+  height: 200px;
+  display: inline-flex;
+  border-radius: 20px;
+  gap: 30px;
+}
+
+.vaina {
+  text-align: center;
+  display: inline-flex;
+}
+
+#conten {
+  text-align: center;    
+  justify-content: center;                                            
+}
+
+#conten button {
+  padding: 12px;
+  background: #b00020;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.contacto-contenedor{
+  margin: auto;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 20px;
+  padding: 20px;
+}
+
+main {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  min-height: 400px;
+}
+
+aside {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.noso {
+  margin: 0 30px;
+}
+
+footer {
+  background: #222;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.servicios_pla-pro{
+  text-align: center;
+  margin: 30px;
+  padding: 30px;
+}
+
+.placas {
+  display: flex;          
+  gap: 100px;              
+  justify-content: center;
+}
+
+.placa {
+  text-align: center;     
+}
+
+.placa img {
+  max-width: 150px;       
+  display: block;
+  margin: 40;
+}
+
+.procesadores {
+  display: flex;          
+  gap: 100px;              
+  justify-content: center;
+}
+
+.proce {
+  text-align: center;     
+}
+
+.proce img {
+  max-width: 150px;       
+  display: block;
+  margin: 40;
+}
+
+#pie-pagina{
+    text-align: center;
+    padding: 4px;
+    background-color: #333;
+    margin-top: auto;
+}
