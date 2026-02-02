@@ -9,14 +9,15 @@ html{
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background: #f5f5f5;
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Altura mínima del viewport */
+  min-height: 100vh; /* altura mínima del viewport */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #f5f7fb;
+  color: #222;
 }
 
 .container{
@@ -36,6 +37,8 @@ nav {
   justify-content: center; /* centra el UL */
   padding: 10px 20px;
   position: relative;
+  border-end-end-radius: 15px;
+  border-bottom-left-radius: 15px;
 }
 
 
@@ -100,13 +103,13 @@ nav ul li:hover {
     margin-left: 0;
   }
 
-  /* mostrar botón */
+  /* mostrar boton */
   .hide {
     display: block;
     order: 2;
   }
 
-  /* menú oculto inicialmente */
+  /* menú oculto inicialmente porque asi es que va */
   nav ul {
     display: none;
     flex-direction: column;
@@ -128,6 +131,10 @@ nav ul li:hover {
   article div {
     width: 100px;
     height: 100px;
+  }
+  .container.modern {
+    grid-template-columns: 1fr;
+    padding: 20px;
   }
 }
 
@@ -153,7 +160,8 @@ article div {
 
 #conten {
   text-align: center;    
-  justify-content: center;                                            
+  justify-content: center;     
+  margin-top: 10px;                                       
 }
 
 #conten button {
@@ -169,11 +177,21 @@ article div {
   margin: auto;
 }
 
-.container {
+/*.container {
   display: grid;
   grid-template-columns: 3fr 1fr;
   gap: 20px;
   padding: 20px;
+}
+*/
+
+.container{
+  display: grid;
+  grid-template-columns: 3fr 1.2fr;
+  gap: 24px;
+  padding: 40px;
+  max-width: 1200px;
+  margin: auto;
 }
 
 main {
@@ -183,15 +201,56 @@ main {
   min-height: 400px;
 }
 
-aside {
-  background: #fff;
-  padding: 20px;
-  border-radius: 8px;
+main h2 {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+  margin-top: 30px;
 }
 
-.noso {
-  margin: 0 30px;
+main h2:first-child {
+  margin-top: 0;
 }
+
+/* YA AQUI NO SE QUE ESTA PASANDO */
+
+main p,
+aside p {
+  line-height: 1.7;
+  color: #555;
+}
+
+/* Aside */
+.aside h3 {
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+}
+
+.aside ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.aside li {
+  padding: 10px 0;
+  font-size: 0.95rem;
+  color: #333;
+  border-bottom: 1px solid #eee;
+}
+
+/* Badge */
+.badge {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 8px 14px;
+  background: #b00020;
+  color: #fff;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* FIN LOQUERA */
 
 footer {
   background: #222;

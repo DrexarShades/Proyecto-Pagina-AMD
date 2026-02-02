@@ -1,0 +1,108 @@
+.servicios {
+  max-width: 1200px;
+  margin: auto;
+  padding: 60px 30px;
+  font-family: system-ui, sans-serif;
+}
+
+/* HEADER */
+.servicios-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.servicios-header h1 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+
+.servicios-header p {
+  color: #666;
+  font-size: 1rem;
+}
+
+/* CATEGORÍAS */
+.categoria {
+  margin-bottom: 70px;
+
+}
+
+.categoria h2 {
+  font-size: 1.7rem;
+  margin-bottom: 30px;
+}
+
+/* GRID DE PRODUCTOS */
+.grid-productos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+}
+
+.noso {
+  margin: 10 30px;
+}
+
+
+
+/* TARJETA */
+.producto {
+  background: #fff;
+  border-radius: 18px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.producto:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 45px rgba(0,0,0,0.1);
+}
+
+/* IMAGEN */
+.producto img {
+  max-height: 140px;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+
+/* TEXTO */
+.producto h4 {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.producto p {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* PRECIO */
+.precio {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 6px 14px;
+  background: #b00020;
+  color: #fff;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* PRODUCTO ESPECIAL */
+.producto.especial {
+  background: linear-gradient(135deg, #111, #222);
+  color: white;
+}
+
+.producto.especial p {
+  color: #ccc;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .servicios {
+    padding: 40px 20px;
+  }
+}
