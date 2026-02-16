@@ -5,6 +5,7 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
     background: linear-gradient(
         135deg,
         #000000 0%,
@@ -15,7 +16,6 @@ body {
     flex-direction: column;
 }
 
-/* LOGO */
 .logo {
     height: 60px;
     margin: auto;
@@ -29,7 +29,6 @@ body {
     perspective: 1000px;
 }
 
-/* TARJETA */
 .card {
     width: 100%;
     height: 100%;
@@ -43,7 +42,7 @@ body {
 }
 
 
-/* CARAS */
+/* CARAS DEL LOGIN */
 .face {
     position: absolute;
     width: 100%;
@@ -109,7 +108,6 @@ body {
     font-size: 0.9rem;
 }
 
-/* CHECKBOX */
 .checkbox-group {
     display: flex;
     align-items: center;
@@ -121,7 +119,7 @@ body {
     width: auto;
 }
 
-/* BOTÓN */
+/* BOTON QUE TIENE EL WIDTH MAÑOSO */
 button {
     width: 100%;
     padding: 0.75rem;
@@ -137,7 +135,7 @@ button:hover {
     background-color: #ff1a1a;
 }
 
-/* SWITCH */
+/* PA EL REGISTRO */
 .switch {
     margin-top: 1rem;
     text-align: center;

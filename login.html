@@ -1,1 +1,95 @@
-skdkmsfkfkfmsdkfkdsfiosdfiojioewf
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Login AMD</title>
+<link rel="stylesheet" href="css/logins.css">
+<!--<link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />--> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+</head>
+
+<body>
+    
+
+    <div class="scene">
+        <div class="card" id="card">
+            
+
+            <!-- LOGIN -->
+            <div class="login-container face front">
+                <img src="img/amd-logo.png" alt="" class="logo">
+                <form class="login-form" action="index.html">
+                    <h2>Inicio de sesión</h2>
+
+                    <div class="input-group">
+                        <label>Usuario <i class="fa-solid fa-user"></i> </label>
+                        <input type="text" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Contraseña <i class="fa-solid fa-lock"></i></label>
+                        <input type="password" required>
+                    </div>
+
+                    <div class="input-group">
+                        <a href="#">¿Olvidó su contraseña?</a>
+                    </div>
+
+                    <button type="submit">Iniciar sesión</button>
+
+                    <p class="switch">
+                        ¿No tienes cuenta?
+                        <span onclick="flip()">Regístrate</span>
+                    </p>
+                </form>
+            </div>
+
+            <!-- REGISTRO -->
+            <div class="login-container face back">
+                <form class="login-form" action="index.html">
+                    <h2>Registro</h2>
+
+                    <div class="input-group">
+                        <label>Usuario</label>
+                        <input type="text" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Correo</label>
+                        <input type="email" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Contraseña</label>
+                        <input type="password" required>
+                    </div>
+
+                    <div class="input-group checkbox-group">
+                        <input type="checkbox" id="checkbox" required>
+                        <label for="checkbox">Aceptar condiciones</label>
+                    </div>
+
+                    <button type="submit">Registrarse</button>
+
+                    <p class="switch">
+                        ¿Ya tienes cuenta?
+                        <span onclick="flip()">Inicia sesión</span>
+                    </p>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+<script>
+function flip() {
+    document.getElementById("card").classList.toggle("flipped");
+}
+</script>
+</body>
+</html>
+

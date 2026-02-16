@@ -14,9 +14,16 @@ body {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* altura mínima del viewport */
+  min-height: 100vh; /* altura minima de viewport */
   font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  background: #f5f7fb;
+ /* background: #f5f7fb; */
+  background: linear-gradient(
+        135deg,
+        #000000 0%,
+        #1a0000 30%,
+        #b11217 60%,
+        #ff1a1a 100%
+    );
   color: #222;
 }
 
@@ -30,16 +37,16 @@ header h1 {
   margin: 0;
 }
 
-nav {
+/* nav {
   background: var(--rojoam);
   display: flex;
   align-items: center;
-  justify-content: center; /* centra el UL */
+  justify-content: center;  centra el UL 
   padding: 10px 20px;
   position: relative;
   border-end-end-radius: 15px;
   border-bottom-left-radius: 15px;
-}
+} */
 
 
 nav-center {
@@ -47,6 +54,35 @@ nav-center {
   display: flex;
   justify-content: center;
 }
+
+nav {
+  background: var(--rojoam);
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+/* logo a la izquierda */
+.logo-link {
+  justify-self: start;
+}
+
+/* menú perfectamente centrado */
+.nav-menu {
+  justify-self: center;
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* botón hamburguesa a la derecha */
+.hide {
+  justify-self: end;
+}
+
 
 nav ul {
   list-style: none;
@@ -72,6 +108,12 @@ nav ul li:hover {
 .nav-logo {
   margin-right: auto;
   order: 0;
+}
+
+nav a{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #invis{
@@ -107,6 +149,7 @@ nav ul li:hover {
   .hide {
     display: block;
     order: 2;
+    justify-self: end;
   }
 
   /* menú oculto inicialmente porque asi es que va */
@@ -195,7 +238,7 @@ article div {
 }
 
 main {
-  background: white;
+  background: rgb(255, 255, 255, 0.90);
   padding: 20px;
   border-radius: 8px;
   min-height: 400px;
@@ -209,6 +252,12 @@ main h2 {
 
 main h2:first-child {
   margin-top: 0;
+}
+
+aside{
+  background: rgb(255, 255, 255, 0.90);
+  border-radius: 8px;
+  padding: 12px;
 }
 
 /* YA AQUI NO SE QUE ESTA PASANDO */
@@ -238,7 +287,6 @@ aside p {
   border-bottom: 1px solid #eee;
 }
 
-/* Badge */
 .badge {
   display: inline-block;
   margin-top: 20px;
@@ -248,6 +296,7 @@ aside p {
   border-radius: 999px;
   font-size: 0.85rem;
   font-weight: 500;
+  margin: 0px 20px;
 }
 
 /* FIN LOQUERA */
@@ -257,7 +306,7 @@ footer {
   color: white;
   padding: 20px;
   text-align: center;
-  margin-top: 30px;
+  margin-top: 0px;
 }
 
 .servicios_pla-pro{
@@ -303,4 +352,13 @@ footer {
     padding: 4px;
     background-color: #333;
     margin-top: auto;
+}
+
+.cocote{
+  background: var(--rojosi);
+  padding: 10px;
+  font: normal 18px FontAwesome;
+  display: block;
+  justify-self: end;
+  color: #FFFFFF;
 }

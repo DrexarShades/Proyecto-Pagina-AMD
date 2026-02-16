@@ -1,93 +1,104 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<title>Login AMD</title>
-<link rel="stylesheet" href="css/logins.css">
-<link
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inicio</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-</head>
+    <script src="js/display.js"></script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="index.html" class="logo-link">
+    <img src="img/amd-logo.png" class="nav-logo" height="40" alt="Inicio">
+  </a>
+          <ul class="nav-menu">
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="nosotros.html">Nosotros</a></li>
+    <li><a href="productos.html">Productos</a></li>
+    <li><a href="servicios.html">Servicios</a></li>
+    <li><a href="contacto.html">Contacto</a></li>
+  </ul>
+     
+       <div class="hide"><i class="fa fa-bars"></i></div>
+       <a href="login.html"><div class="cocote"><i class="fa-solid fa-user"></i></div></a>
+      
+    </header>
 
-<body>
+    <section class="container">
+      <main>
+        <h2>Contenido Principal</h2>
+        <p>
+          Este sitio está diseñado para ofrecer información clara, sencilla y
+       <a href=""></a>   organizada sobre los temas que más te interesan. Nuestro objetivo es
+          crear un lugar donde puedas aprender, explorar ideas y mantenerte
+          informado sin complicaciones.
+        </p>
+        <h2>¿Que encontraras aqui?</h2>
+        <p>
+          En esta página puedes encontrar artículos, guías y recursos pensados
+          para ayudarte en tu día a día. Nos enfocamos en: Explicaciones simples
+          y directas Contenido organizado por categorías Diseño rápido, ligero y
+          compatible con cualquier dispositivo
+        </p>
+        <h2>Nuestro compromiso</h2>
+        <p>
+          Trabajamos constantemente en mejorar el contenido para que siempre
+          tengas acceso a información confiable, actualizada y bien presentada.
+          Queremos que esta web sea un punto de referencia para quienes buscan
+          aprender y crecer.
+        </p>
+      </main>
+
+      <aside>
+        <h3>Barra Lateral</h3>
+        <p>No te pierdas nuestras secciones más visitadas:</p>
+        <ul>
+          <li>✔️ Tutoriales paso a paso</li>
+          <li>✔️ Herramientas recomendadas</li>
+          <li>✔️ Artículos populares del mes</li>
+        </ul>
+        <span class="badge">Mas en el futuro</span>
+      </aside>
+
+    </section>
+
+    <footer>Rafa&Fram Corp.© 2025 - Todos los derechos reservados.</footer>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script>
+      $(".hide").on("click", function () {
+        $("nav ul").toggle("slow");
+      });
+
+      // Parche: al redimensionar, quitar style inline o mostrar/ocultar según el ancho
+      $(window).on("resize", function () {
+        if ($(window).width() > 768) {
+          // elimina cualquier 'display' inline que dejó jQuery para que mande el CSS
+          $("nav ul").removeAttr("style");
+        } else {
+          // opcional: ocultar cuando sea menor a 768 (si quieres)
+          // $("nav ul").hide();|
+        }
+      });
+
+      // Ejecutar una vez al cargar para asegurar estado correcto
+      $(document).ready(function () {
+        if ($(window).width() > 768) $("nav ul").removeAttr("style");
+        else $("nav ul").hide();
+      });
+    </script>
     
+    <audio controls autoplay muted>
+  <source src="audiovideo/itazura [DyekqO2I1UI].opus" type="audio/mpeg">
+  Tu navegador no soporta el audio.
+</audio>
 
-    <div class="scene">
-        <div class="card" id="card">
-            
-
-            <!-- LOGIN -->
-            <div class="login-container face front">
-                <img src="img/amd-logo.png" alt="" class="logo">
-                <form class="login-form" action="home.html">
-                    <h2>Inicio de sesión</h2>
-
-                    <div class="input-group">
-                        <label>Usuario <i class="fa-solid fa-user"></i> </label>
-                        <input type="text" required>
-                    </div>
-
-                    <div class="input-group">
-                        <label>Contraseña</label>
-                        <input type="password" required>
-                    </div>
-
-                    <div class="input-group">
-                        <a href="#">¿Olvidó su contraseña?</a>
-                    </div>
-
-                    <button type="submit">Iniciar sesión</button>
-
-                    <p class="switch">
-                        ¿No tienes cuenta?
-                        <span onclick="flip()">Regístrate</span>
-                    </p>
-                </form>
-            </div>
-
-            <!-- REGISTRO -->
-            <div class="login-container face back">
-                <form class="login-form" action="home.html">
-                    <h2>Registro</h2>
-
-                    <div class="input-group">
-                        <label>Usuario</label>
-                        <input type="text" required>
-                    </div>
-
-                    <div class="input-group">
-                        <label>Correo</label>
-                        <input type="email" required>
-                    </div>
-
-                    <div class="input-group">
-                        <label>Contraseña</label>
-                        <input type="password" required>
-                    </div>
-
-                    <div class="input-group checkbox-group">
-                        <input type="checkbox" id="checkbox" required>
-                        <label for="checkbox">Aceptar condiciones</label>
-                    </div>
-
-                    <button type="submit">Registrarse</button>
-
-                    <p class="switch">
-                        ¿Ya tienes cuenta?
-                        <span onclick="flip()">Inicia sesión</span>
-                    </p>
-                </form>
-            </div>
-
-        </div>
-    </div>
-
-<script>
-function flip() {
-    document.getElementById("card").classList.toggle("flipped");
-}
-</script>
-</body>
+  </body>
 </html>
-
