@@ -5,6 +5,7 @@
     <title>Servicios</title>
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/serv.css">
+    <link rel="stylesheet" href="css/servicio.css">
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -52,5 +53,61 @@
         else $("nav ul").hide();
       });
     </script>
+
+<main><h1>Servicios Disponibles</h1>
+
+<section class="servicios-container">
+
+  <div class="servicio">
+    <div class="servicio-titulo">Controladores (Drivers) y Software</div>
+    <div class="servicio-contenido">
+      Soporte para mejorar el rendimiento de tarjetas gráficas Radeon y procesadores.
+      Incluye herramientas de optimización como la utilidad de overclocking Ryzen Master
+      y el software de IA ROCm.
+    </div>
+  </div>
+
+  <div class="servicio">
+    <div class="servicio-titulo">Centro de Datos y Nube</div>
+    <div class="servicio-contenido">
+      Soluciones con procesadores EPYC y aceleradores de GPU para computación de alto
+      rendimiento, seguridad y, en el sector financiero, cifrado de memoria en tiempo real.
+    </div>
+  </div>
+
+  <div class="servicio">
+    <div class="servicio-titulo">Gaming e Inteligencia Artificial</div>
+    <div class="servicio-contenido">
+      Tecnologías de juego para PC y portátiles, incluyendo gráficos Radeon y soluciones
+      de IA (Ryzen AI) para mejorar la experiencia de juego y productividad.
+    </div>
+  </div>
+
+  <div class="servicio">
+    <div class="servicio-titulo">Soporte y Recursos</div>
+    <div class="servicio-contenido">
+      Servicios de garantía, descargas técnicas, documentación y recursos para
+      desarrolladores de software y hardware, incluyendo plataformas como Vitis
+      para aplicaciones embebidas.
+    </div>
+  </div>
+
+  <div class="servicio">
+    <div class="servicio-titulo">Soluciones Integradas</div>
+    <div class="servicio-contenido">
+      Hardware y software para sistemas embebidos, incluyendo FPGAs y SoCs adaptables.
+    </div>
+  </div>
+
+</section>
+
+<script>
+  $(".servicio-titulo").on("click", function () {
+    $(this).toggleClass("activo");
+    $(this).next(".servicio-contenido").slideToggle("slow");
+  });
+</script>
+</main>
+ <footer>Rafa&Fram Corp.© 2025 - Todos los derechos reservados.</footer>
   </body>
 </html>

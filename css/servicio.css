@@ -1,0 +1,101 @@
+/* ========================= */
+/* FONDO ROJO GENERAL */
+/* ========================= */
+
+body {
+  background: linear-gradient(135deg, #2a0000, #ff1a1a);
+  margin: 0;
+}
+
+/* ========================= */
+/* CAPA BLANCA GRANDE */
+/* ========================= */
+
+.servicios {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 60px 40px;
+  margin: 50px auto;
+  max-width: 1100px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.1);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .servicios {
+    padding: 40px 20px;
+  }
+}
+
+/* ========================= */
+/* CONTENEDOR DEL ACORDEÓN */
+/* ========================= */
+
+.servicios-container {
+  max-width: 900px;
+  width: 90%;
+  margin: 60px auto;
+  background: #ffffff75;
+  padding: 60px 40px;
+  border-radius: 20px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.22);
+}
+
+.servicio {
+  margin-bottom: 15px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0px 12px 60px rgba(0,0,0,0.05);
+  background: #e4e0e0;
+  width: 100%;
+}
+
+.servicio-titulo {
+  padding: 18px 20px;
+  background: #b00020;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.3s ease;
+}
+
+.servicio-titulo:hover {
+  background: #8c0019;
+}
+
+/* Flechita */
+.servicio-titulo::after {
+  content: "+";
+  position: absolute;
+  right: 20px;
+  font-size: 20px;
+  transition: transform 0.3s ease;
+}
+
+.servicio-titulo.activo::after {
+  content: "-";
+}
+
+.servicio-contenido {
+  display: none;
+  padding: 20px;
+  background: #f9f9f9;
+  line-height: 1.6;
+  color: #444;
+  animation: fadeIn 0.3s ease-in-out;
+
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+main {
+    margin: 40;
+}
+
+main h1{
+    text-align: center;
+}
