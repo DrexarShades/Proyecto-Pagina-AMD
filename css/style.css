@@ -15,7 +15,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh; /* altura minima de viewport */
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+ /* font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif; */
  /* background: #f5f7fb; */
   background: linear-gradient(
         135deg,
@@ -24,7 +24,11 @@ body {
         #b11217 60%,
         #ff1a1a 100%
     );
-  color: #222;
+  background-repeat: no-repeat;
+    font-family: 'Inter', sans-serif;
+    background-color: #f8fafc; /* Neutral warm/light background */
+            color: #1e293b;
+            scroll-behavior: smooth;
 }
 
 .container{
@@ -143,6 +147,7 @@ nav a{
   .nav-logo {
     order: 0;
     margin-left: 0;
+    height: 40px;
   }
 
   /* mostrar boton */
