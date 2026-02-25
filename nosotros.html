@@ -146,6 +146,14 @@ nav a{
   margin-left: 10px;
 }
 
+footer {
+  background: #222;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  margin-top: 0px;
+}
+
 @media (max-width: 768px) {
 
   nav {
@@ -195,6 +203,7 @@ nav a{
     grid-template-columns: 1fr;
     padding: 20px;
   }
+  
 }
 
 
@@ -252,16 +261,6 @@ nav a{
             to { opacity: 1; transform: translateY(0); }
         }
     </style>
-    <!-- Chosen Palette: Warm Neutrals with AMD Red Accent (#ED1C24) and Black -->
-    <!-- Application Structure Plan:
-        1. Header: Simple navigation.
-        2. Hero: "Together We Advance" - Intro to the entity.
-        3. Identity Section (Mission/Vision): Card-based interaction to toggle between core philosophical pillars.
-        4. Strategic Pillars: Accordion/Tabs to explain the 4 key growth areas (Data Center, AI, etc.).
-        5. Data Dashboard: Charts showing financial breakdown and market trends (Goals realized).
-        6. Sustainability: Visual progress indicators for non-financial goals.
-        Rationale: Breaks down complex corporate literature into bite-sized, interactive chunks.
-    -->
 </head>
 <body class="antialiased">
 
@@ -282,65 +281,6 @@ nav a{
        <a href="login.html"><div class="cocote"><i class="fa-solid fa-user"></i></div></a>
       
     </header>
-
-    <!-- Navigation 
-    <nav class="bg-white shadow-md sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <div class="flex items-center">
-                    <div class="flex-shrink-0 flex items-center gap-2">
-                        <!-- CSS Icon for Chip
-                        <div class="w-8 h-8 bg-black flex items-center justify-center rounded text-white font-bold">A</div>
-                        <span class="font-bold text-xl tracking-tight">AMD <span class="text-gray-500 font-light text-sm hidden sm:inline">| Reporte Estratégico</span></span>
-                    </div>
-                </div>
-                <div class="hidden sm:flex sm:space-x-8 items-center">
-                    <a href="#identity" class="nav-item text-gray-500 hover:text-gray-900 px-3 py-2 text-sm font-medium">Identidad</a>
-                    <a href="#strategy" class="nav-item text-gray-500 hover:text-gray-900 px-3 py-2 text-sm font-medium">Estrategia</a>
-                    <a href="#dashboard" class="nav-item text-gray-500 hover:text-gray-900 px-3 py-2 text-sm font-medium">Datos y Metas</a>
-                </div>
-            </div>
-        </div>
-    </nav> -->
-
-    <!-- Hero Section -->
-   <!-- <header class="bg-white">
-        <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center">
-            <div class="text-center md:text-left md:w-1/2">
-                <h1 class="text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight lg:text-6xl">
-                    Together We <span class="text-[#ED1C24]">Advance</span>_
-                </h1>
-                <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto md:mx-0">
-                    Análisis interactivo de la gestión empresarial de <strong>Advanced Micro Devices (AMD)</strong>. Explore cómo la innovación en computación de alto rendimiento impulsa el futuro.
-                </p>
-                <div class="mt-8 flex justify-center md:justify-start gap-4">
-                    <button onclick="document.getElementById('identity').scrollIntoView()" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-black hover:bg-gray-800 transition">
-                        Explorar Misión y Visión
-                    </button>
-                    <button onclick="document.getElementById('dashboard').scrollIntoView()" class="inline-flex items-center justify-center px-5 py-3 border border-gray-300 text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 transition">
-                        Ver Datos Clave
-                    </button>
-                </div>
-            </div>
-            <div class="mt-10 md:mt-0 md:w-1/2 flex justify-center">
-                
-
-                <!-- Abstract Representation of a Processor using CSS Grid 
-                <div class="grid grid-cols-4 gap-2 p-4 bg-gray-100 rounded-xl shadow-inner w-64 h-64 rotate-3 hover:rotate-0 transition duration-700">
-                    <div class="bg-gray-300 rounded col-span-2 row-span-2 animate-pulse"></div>
-                    <div class="bg-gray-800 rounded"></div>
-                    <div class="bg-[#ED1C24] rounded opacity-80"></div>
-                    <div class="bg-gray-400 rounded"></div>
-                    <div class="bg-gray-300 rounded"></div>
-                    <div class="bg-gray-800 rounded col-span-2"></div>
-                    <div class="bg-gray-300 rounded"></div>
-                    <div class="bg-[#ED1C24] rounded opacity-60"></div>
-                </div>
-            </div>
-        </div>
-    </header> -->
-
-    <!-- Section 1: Identity Core (Mission/Vision/Values) -->
     <section id="identity" class="py-16 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
@@ -353,9 +293,9 @@ nav a{
                 </p>
             </div>
 
-            <!-- Interactive Grid -->
+           
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Mission Card -->
+      
                 <div class="bg-white overflow-hidden shadow rounded-lg card-hover cursor-pointer border-t-4 border-gray-200 hover:border-[#ED1C24]" onclick="showIdentityDetail('mision')">
                     <div class="px-4 py-5 sm:p-6 text-center">
                         <div class="text-4xl mb-4">🚀</div>
@@ -365,7 +305,7 @@ nav a{
                     </div>
                 </div>
 
-                <!-- Vision Card -->
+             
                 <div class="bg-white overflow-hidden shadow rounded-lg card-hover cursor-pointer border-t-4 border-gray-200 hover:border-[#ED1C24]" onclick="showIdentityDetail('vision')">
                     <div class="px-4 py-5 sm:p-6 text-center">
                         <div class="text-4xl mb-4">👁️</div>
@@ -375,7 +315,7 @@ nav a{
                     </div>
                 </div>
 
-                <!-- Values Card -->
+             
                 <div class="bg-white overflow-hidden shadow rounded-lg card-hover cursor-pointer border-t-4 border-gray-200 hover:border-[#ED1C24]" onclick="showIdentityDetail('valores')">
                     <div class="px-4 py-5 sm:p-6 text-center">
                         <div class="text-4xl mb-4">💎</div>
@@ -386,7 +326,7 @@ nav a{
                 </div>
             </div>
 
-            <!-- Dynamic Content Display Area -->
+            
             <div id="identity-display" class="mt-10 bg-white rounded-xl shadow-lg border border-gray-100 p-8 transition-all duration-500">
                 <div class="text-center">
                     <h3 id="id-title" class="text-2xl font-bold text-gray-900 mb-4">Seleccione una tarjeta arriba</h3>
@@ -396,7 +336,7 @@ nav a{
         </div>
     </section>
 
-    <!-- Section 2: Strategy (Pillars) -->
+   
     <section id="strategy" class="py-16 bg-white border-t border-gray-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="lg:text-center mb-10">
@@ -410,7 +350,7 @@ nav a{
             </div>
 
             <div class="flex flex-col lg:flex-row gap-8">
-                <!-- Navigation List -->
+     
                 <div class="lg:w-1/3 flex flex-col space-y-2">
                     <button onclick="switchPillar(0)" id="btn-pillar-0" class="pillar-btn text-left px-6 py-4 rounded-lg bg-gray-50 hover:bg-gray-100 focus:outline-none transition border-l-4 border-transparent active-pillar">
                         <span class="font-bold block text-gray-900">1. Data Center First</span>
@@ -430,10 +370,9 @@ nav a{
                     </button>
                 </div>
 
-                <!-- Content Area -->
+            
                 <div class="lg:w-2/3 bg-gray-50 rounded-2xl p-8 relative min-h-[300px] flex items-center">
-                    
-                    <!-- Content 1 -->
+ 
                     <div id="pillar-content-0" class="pillar-content active w-full">
                         <div class="flex items-center mb-4">
                             <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 text-2xl mr-4">☁️</div>
@@ -452,7 +391,7 @@ nav a{
                         </ul>
                     </div>
 
-                    <!-- Content 2 -->
+        
                     <div id="pillar-content-1" class="pillar-content w-full">
                         <div class="flex items-center mb-4">
                             <div class="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 text-2xl mr-4">🤖</div>
@@ -471,7 +410,7 @@ nav a{
                         </ul>
                     </div>
 
-                    <!-- Content 3 -->
+                
                     <div id="pillar-content-2" class="pillar-content w-full">
                         <div class="flex items-center mb-4">
                             <div class="w-12 h-12 rounded-full bg-red-100 flex items-center justify-center text-red-600 text-2xl mr-4">🎮</div>
@@ -490,7 +429,7 @@ nav a{
                         </ul>
                     </div>
 
-                    <!-- Content 4 -->
+                
                     <div id="pillar-content-3" class="pillar-content w-full">
                         <div class="flex items-center mb-4">
                             <div class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center text-green-600 text-2xl mr-4">💻</div>
@@ -514,7 +453,7 @@ nav a{
         </div>
     </section>
 
-    <!-- Section 3: Data & Goals (Dashboard) -->
+   
     <section id="dashboard" class="py-16 bg-gray-900 text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="mb-12">
@@ -525,7 +464,7 @@ nav a{
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
-                <!-- Chart 1: Revenue Mix -->
+
                 <div class="bg-gray-800 rounded-xl p-6 shadow-xl border border-gray-700">
                     <h3 class="text-xl font-semibold mb-2">Transformación de Ingresos</h3>
                     <p class="text-sm text-gray-400 mb-6">Objetivo: Diversificación hacia mercados de alto margen (Data Center & Embedded).</p>
@@ -537,7 +476,6 @@ nav a{
                     </div>
                 </div>
 
-                <!-- Chart 2: Growth Trend -->
                 <div class="bg-gray-800 rounded-xl p-6 shadow-xl border border-gray-700">
                     <h3 class="text-xl font-semibold mb-2">Crecimiento de Cuota en Servidores</h3>
                     <p class="text-sm text-gray-400 mb-6">Objetivo: Capturar >30% del mercado de servidores empresariales.</p>
@@ -559,7 +497,6 @@ nav a{
         </div>
     </section>
 
-    <!-- Section 4: Sustainability Goals (Interactive) -->
     <section class="py-16 bg-gray-50">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-10">
@@ -569,7 +506,7 @@ nav a{
 
             <div class="bg-white shadow-lg rounded-lg p-8">
                 <div class="space-y-8">
-                    <!-- Goal 1 -->
+
                     <div>
                         <div class="flex justify-between items-end mb-2">
                             <span class="text-lg font-medium text-gray-900">Eficiencia Energética (Nodos HPC & IA)</span>
@@ -581,7 +518,6 @@ nav a{
                         <p class="text-xs text-gray-500 mt-1">En camino para lograr 30 veces más eficiencia energética en procesadores de servidor.</p>
                     </div>
 
-                    <!-- Goal 2 -->
                     <div>
                         <div class="flex justify-between items-end mb-2">
                             <span class="text-lg font-medium text-gray-900">Reducción de Emisiones (Operaciones)</span>
@@ -593,7 +529,6 @@ nav a{
                         <p class="text-xs text-gray-500 mt-1">Reducción de emisiones de gases de efecto invernadero (Alcance 1 y 2).</p>
                     </div>
 
-                    <!-- Goal 3 -->
                     <div>
                         <div class="flex justify-between items-end mb-2">
                             <span class="text-lg font-medium text-gray-900">Participación en STEM (Mujeres)</span>
@@ -609,23 +544,8 @@ nav a{
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-white border-t border-gray-200">
-        <div class="max-w-7xl mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px-8">
-            <p class="text-center text-base text-gray-400">
-                &copy; 2024 Generado para fines educativos sobre la gestión empresarial de AMD. No afiliado oficialmente a Advanced Micro Devices, Inc.
-            </p>
-        </div>
-    </footer>
-
-    <!-- Visualization & Content Choices:
-         1. Identity Cards: Goal: Simplify complex text. Method: Clickable cards updating a DOM element. Justification: Reduces visual clutter, invites interaction.
-         2. Strategic Pillars: Goal: Explain distinct business units. Method: Accordion/Tab system. Justification: Allows user to focus on one vertical at a time.
-         3. Charts: Goal: Show financial shift. Method: Chart.js Doughnut (Mix) and Line (Trend). Justification: Visual proof of the "Data Center First" strategy success.
-         4. ESG Bars: Goal: Show progress. Method: CSS width animations. Justification: Simple, effective visual for "Work in Progress".
-         Confirming NO SVG graphics used directly (using Unicode icons) and NO Mermaid JS.
-    -->
-    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+ 
+    <footer>Rafa&Fram Corp.© 2025 - Todos los derechos reservados.</footer>
 
     <script>
         // --- Data & State ---
