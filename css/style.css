@@ -24,15 +24,10 @@ body {
         #b11217 60%,
         #ff1a1a 100%
     );
-  background-repeat: no-repeat;
     font-family: 'Inter', sans-serif;
     background-color: #f8fafc; /* Neutral warm/light background */
-            color: #1e293b;
-            scroll-behavior: smooth;
-}
-
-.container{
-  flex-grow: 1;
+    color: #1e293b;
+    scroll-behavior: smooth;
 }
 
 header h1 {
@@ -132,6 +127,7 @@ nav a{
   color: white;
   cursor: pointer;
   margin-left: 10px;
+  transition: ease-in-out 0.2s;
 }
 
 @media (max-width: 768px) {
@@ -183,6 +179,34 @@ nav a{
   .container.modern {
     grid-template-columns: 1fr;
     padding: 20px;
+  }
+  .cocotelink{
+    order: 2;
+  }
+  .container {
+    display: block !important;
+    width: 100% !important;
+    padding: 15px !important;
+  }
+
+   .container main,
+  .container aside {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  
+  .container aside {
+    margin-top: 20px !important;
+  }
+
+ /** aside{
+    margin-top: 20px;
+  }
+**/
+  aside .producto{
+    width: 100%;
+    max-width: 280px;
   }
 }
 
@@ -240,10 +264,11 @@ article div {
   padding: 40px;
   max-width: 1200px;
   margin: auto;
+  flex-grow: 1;
 }
 
 main {
-  background: rgb(255, 255, 255, 0.90);
+  background: rgba(255, 255, 255, 0.90);
   padding: 20px;
   border-radius: 8px;
   min-height: 400px;
@@ -260,7 +285,7 @@ main h2:first-child {
 }
 
 aside{
-  background: rgb(255, 255, 255, 0.90);
+  background: rgba(255, 255, 255, 0.90);
   border-radius: 8px;
   padding: 12px;
 }
@@ -301,7 +326,16 @@ aside p {
   border-radius: 999px;
   font-size: 0.85rem;
   font-weight: 500;
-  margin: 0px 20px;
+  margin: auto;
+  align-self: center;
+}
+
+.badge a{
+  color: white;
+}
+
+.centrar{
+  text-align: center;
 }
 
 /* FIN LOQUERA */
@@ -364,6 +398,11 @@ footer {
   padding: 10px;
   font: normal 18px FontAwesome;
   display: block;
-  justify-self: end;
+ 
   color: #FFFFFF;
+}
+
+.cocotelink{
+  display: block;
+  justify-self: end;
 }

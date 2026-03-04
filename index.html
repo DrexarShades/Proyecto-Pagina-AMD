@@ -13,6 +13,11 @@
     <script src="js/display.js"></script>
   </head>
   <body>
+    <style>
+      .producto img{
+        width: 225px;
+      }
+    </style>
     <header>
       <nav>
         <a href="index.html" class="logo-link">
@@ -27,7 +32,7 @@
   </ul>
      
        <div class="hide"><i class="fa fa-bars"></i></div>
-       <a href="login.html"><div class="cocote"><i class="fa-solid fa-user"></i></div></a>
+       <a href="login.html" class="cocotelink"><div class="cocote"><i class="fa-solid fa-user"></i></div></a>
       
     </header>
 
@@ -57,48 +62,57 @@
       </main>
 
       <aside>
-        <h3>Barra Lateral</h3>
-        <p>No te pierdas nuestras secciones más visitadas:</p>
-        <ul>
-          <li>✔️ Tutoriales paso a paso</li>
-          <li>✔️ Herramientas recomendadas</li>
-          <li>✔️ Artículos populares del mes</li>
-        </ul>
-        <span class="badge">Mas en el futuro</span>
+        <h3>Asegurate de revisar nuestros productos mas buscados</h3>
+        <p></p>
+        <article class="producto">
+        <img src="img/rx 9070xt.png" alt="RX 9070XT">
+        <h4>RX 9070XT</h4>
+        <span class="precio">MSRP $649</span>
+      </article>
+        <article class="producto">
+        <img src="img/ryzen9.png" alt="Ryzen 9">
+        <h4>Ryzen 9 9950X3D</h4>
+        <span class="precio">MSRP $449</span>
+      </article>
+      <div class="centrar">
+        <span class="badge">Mas en <a href="productos.html">Productos</a></span>
+      </div>
       </aside>
 
     </section>
 
     <footer>Rafa&Fram Corp.© 2025 - Todos los derechos reservados.</footer>
 
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-    <script>
-      $(".hide").on("click", function () {
-        $("nav ul").toggle("slow");
-      });
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script>
+  $(".hide").on("click", function () {
+    $("nav ul").toggle("slow");
 
-      // Parche: al redimensionar, quitar style inline o mostrar/ocultar según el ancho
-      $(window).on("resize", function () {
-        if ($(window).width() > 768) {
-          // elimina cualquier 'display' inline que dejó jQuery para que mande el CSS
-          $("nav ul").removeAttr("style");
-        } else {
-          // opcional: ocultar cuando sea menor a 768 (si quieres)
-          // $("nav ul").hide();|
-        }
-      });
+    // aparece y desaparece alternadamente
+    $(".cocotelink").toggle();
+  });
 
-      // Ejecutar una vez al cargar para asegurar estado correcto
-      $(document).ready(function () {
-        if ($(window).width() > 768) $("nav ul").removeAttr("style");
-        else $("nav ul").hide();
-      });
-    </script>
+  $(window).on("resize", function () {
+    if ($(window).width() > 768) {
+      $("nav ul").removeAttr("style");
+      $(".cocotelink").show(); // en escritorio siempre visible
+    }
+  });
+
+  $(document).ready(function () {
+    if ($(window).width() > 768) {
+      $("nav ul").removeAttr("style");
+      $(".cocotelink").show();
+    } else {
+      $("nav ul").hide();
+    }
+  });
+</script>
     
-    <audio controls autoplay muted>
+   <!--<audio controls autoplay muted>
   <source src="audiovideo/itazura [DyekqO2I1UI].opus" type="audio/mpeg">
   Tu navegador no soporta el audio.
 </audio>
-
+--> 
   </body>
 </html>
