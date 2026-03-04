@@ -1,6 +1,8 @@
 .servicios {
-  margin: 40;
+  max-width: 1200px;
+  margin: auto;
   padding: 60px 30px;
+  font-family: system-ui, sans-serif;
 }
 
 /* HEADER */
@@ -51,6 +53,9 @@
   text-align: center;
   box-shadow: 0 12px 30px rgba(0,0,0,0.06);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: visible;
+  z-index: 1;
 }
 
 .producto:hover {
@@ -98,9 +103,112 @@
   color: #ccc;
 }
 
+/* PANEL LATERAL */
+.producto-info-placas {
+  position: absolute;
+  top: 10%;
+  left: 83%;
+  transform: translateY(-50%) scale(0.95);
+  width: 320px;
+  background: #1c1c1c;
+  color: #fff;
+  padding: 10px;
+  border-radius: 18px;
+  opacity: 0;
+  transition: 0.2s ease;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.45);
+  display: block;
+  min-height: 300px;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.producto-info-proce {
+  position: absolute;
+  top: 10%;
+  left: 83%;
+  transform: translateY(-50%) scale(0.95);
+  width: 320px;
+  background: #1c1c1c;
+  color: #fff;
+  padding: 10px;
+  border-radius: 18px;
+  opacity: 0;
+  transition: 0.2s ease;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.45);
+  display: block;
+  min-height: 430px;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+/* Mostrar */
+.producto:hover .producto-info-placas, 
+.producto:hover .producto-info-proce {
+  opacity: 1;
+  transform: translateY(-50%) scale(1);
+}
+
+/* Título */
+.producto-info-placas h3, 
+.producto-info-proce h3 {
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+/* Ficha técnica ordenada */
+.producto-info-placas p, 
+.producto-info-proce p {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+  color: #ddd;
+  display: block;
+  width: 100%;
+}
+
+.producto-info-placas strong, 
+.producto-info-proce strong {
+  min-width: 110px;
+  display: block;
+  margin-bottom: 3px;
+  color: #fff;
+}
+
+.grid-productos {
+  overflow: visible;
+}
+
+.producto:hover {
+  z-index: 999; 
+}
+/* Hacer que el producto de la derecha del todo haga el hover a la izquierda */
+.producto-izquierda .producto-info-placas,
+.producto-izquierda .producto-info-proce {
+  left: auto;
+  right: 83%;
+}
+
+/* ============================= */
 /* RESPONSIVE */
-@media (max-width: 768px) {
-  .servicios {
-    padding: 40px 20px;
+/* ============================= */
+
+@media (max-width: 992px) {
+
+  .producto-info-placas,
+  .producto-info-proce {
+    position: absolute;
+    left: 50% !important;
+    right: auto !important;
+    top: 110%;
+    transform: translateX(-50%) scale(0.95);
+    width: 90%;
+    min-height: 340;
   }
+
+  .producto:hover .producto-info-placas,
+  .producto:hover .producto-info-proce {
+    transform: translateX(-50%) scale(1);
+  }
+
 }
