@@ -6,6 +6,13 @@ html{
   --gradiennsss: linear-gradient(#ef0707, #bd0000);
   --rojoam: #ca0505;
   --rojosi: #bd0000;
+  --bagraund: linear-gradient(
+        135deg,
+        #000000 0%,
+        #1a0000 30%,
+        #b11217 60%,
+        #ff1a1a 100%
+    );
 }
 
 body {
@@ -17,13 +24,7 @@ body {
   min-height: 100vh; /* altura minima de viewport */
  /* font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif; */
  /* background: #f5f7fb; */
-  background: linear-gradient(
-        135deg,
-        #000000 0%,
-        #1a0000 30%,
-        #b11217 60%,
-        #ff1a1a 100%
-    );
+  background: var(--bagraund);
     font-family: 'Inter', sans-serif;
     background-color: #f8fafc; /* Neutral warm/light background */
     color: #1e293b;
@@ -192,8 +193,8 @@ nav a{
    .container main,
   .container aside {
     display: block !important;
-    width: 100% !important;
-    max-width: 100% !important;
+    width: 90% !important;
+    max-width: 90% !important;
   }
   
   .container aside {
@@ -262,7 +263,7 @@ article div {
   grid-template-columns: 3fr 1.2fr;
   gap: 24px;
   padding: 40px;
-  max-width: 1200px;
+  max-width: 85%;
   margin: auto;
   flex-grow: 1;
 }
