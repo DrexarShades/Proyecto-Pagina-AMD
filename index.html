@@ -1,118 +1,170 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Inicio</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <script src="scripts/display.js"></script>
-  </head>
-  <body>
-    <style>
-      .producto img{
-        width: 225px;
+<html lang="es" class="transition-colors duration-500">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Inicio</title>
+
+  <!-- Tailwind -->
+  <script src="scripts/tailwind.js"></script>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="icon" href="img/favicon.ico">
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class'
+    }
+  </script>
+</head>
+
+<body class="bg-gray-200 text-gray-800 dark:bg-gray-900 dark:text-gray-200 transition-colors duration-500">
+
+  <!-- NAV -->
+  <header class="sticky top-0 z-50 bg-gradient-to-r from-red-700/95 via-red-600/95 to-red-500/95 dark:bg-red-800 shadow-md backdrop-blur-sm transition-all duration-500 text-white">
+  <nav class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+
+    <div class="flex-shrink-0">
+      <a href="index.html">
+        <img src="img/amd-logo.png" class="h-10" alt="Logo">
+      </a>
+    </div>
+
+    <ul class="hidden md:flex gap-12 font-medium mx-auto">
+      <li><a href="#" class="hover:text-gray-300 transition">Inicio</a></li>
+      <li><a href="#" class="hover:text-gray-300 transition">Nosotros</a></li>
+      <li><a href="#" class="hover:text-gray-300 transition">Productos</a></li>
+      <li><a href="#" class="hover:text-gray-300 transition">Servicios</a></li>
+      <li><a href="#" class="hover:text-gray-300 transition">Contacto</a></li>
+    </ul>
+
+    <div class="flex items-center gap-4">
+      <button id="darkBtn" class="text-xl hover:text-yellow-400 transition active:rotate-45">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+
+      <a href="#" class="hidden md:block text-xl hover:text-gray-300 transition">
+        <i class="fa-solid fa-user"></i>
+      </a>
+
+      <button id="menuBtn" class="md:hidden text-2xl">
+        <i class="fa fa-bars"></i>
+      </button>
+    </div>
+
+  </nav>
+
+  <div id="mobileMenu" class="md:hidden overflow-hidden max-h-0 transition-all duration-500 px-4 bg-red-700 dark:bg-red-900">
+    <ul class="flex flex-col gap-3 py-4 ">
+      <li><a href="#" class="block py-2">Inicio</a></li>
+      <li><a href="nosotros.html" class="block py-2">Nosotros</a></li>
+      <li><a href="productos.html" class="block py-2">Productos</a></li>
+      <li><a href="servicios.html" class="block py-2">Servicios</a></li>
+      <li><a href="contacto.html" class="block py-2">Contacto</a></li>
+      <li class="border-t border-red-500 pt-2">
+        <a href="#" class="flex items-center gap-2 py-2">
+          <i class="fa-solid fa-user"></i> Login
+        </a>
+      </li>
+    </ul>
+  </div>
+</header>
+
+  <!-- CONTENIDO -->
+  <section class="max-w-7xl mx-auto px-4 py-8 grid md:grid-cols-3 gap-8">
+
+    <main class="md:col-span-2 space-y-6 bg-white dark:bg-gray-800 p-4 rounded-xl shadow transition text-center">
+      <h2 class="text-3xl font-bold">TOGETHER WE ADVANCE_</h2>
+      <h3 class="text-center mb-16 mt-2 text-2xl font-extrabold tracking-tight sm:text-3xl">"Construir productos excelentes que aceleren las experiencias informáticas de próxima generación."</h3>
+      <div class="mt-4 max-w-3xl mx-auto h-1 bg-gradient-to-r from-transparent via-[#ED1C24] to-transparent"></div>
+
+<p class="leading-relaxed text-lg">AMD se centra en la excelencia del producto. No se trata solo de fabricar chips, sino de habilitar experiencias (gaming, ciencia, nube) que antes eran imposibles. La misión es el motor: acelerar el futuro.</p>
+
+      <h2 class="text-xl font-semibold">¿Qué encontrarás aquí?</h2>
+      <p class="leading-relaxed text-lg">Recursos útiles, nuestros productos, servicios y soporte.</p>
+
+      <h2 class="text-xl font-semibold">Nuestro compromiso</h2>
+      <p class="leading-relaxed text-lg">Trabajamos constantemente en mejorar el contenido para que siempre tengas acceso a información confiable, actualizada y bien presentada. Queremos que esta web sea un punto de referencia para quienes buscan aprender y crecer.</p>
+    </main>
+
+    <aside class="space-y-6">
+
+      <h3 class="text-2xl font-semibold text-center bg-white py-3 shadow rounded-xl dark:bg-gray-800">
+        Productos más buscados
+      </h3>
+
+
+      <article class="group relative bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg border border-transparent hover:border-red-500/50 transition-all duration-500 hover:-translate-y-2">
+  <div class="absolute top-4 right-4 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded-full">NUEVO</div>
+  
+  <div class="overflow-hidden rounded-lg">
+    <img src="img/rx 9070xt.png" class="w-full h-48 object-contain transform group-hover:scale-110 transition-transform duration-500">
+  </div>
+  
+  <h4 class="font-bold mt-4 text-xl tracking-tight">Radeon™ RX 9070 XT</h4>
+  <p class="text-gray-500 dark:text-gray-400 text-sm mb-4">Arquitectura RDNA 4 avanzada.</p>
+  
+  <div class="flex items-center justify-between">
+    <span class="text-2xl font-black text-red-600">MSRP $649</span>
+    <button class="bg-gray-900 dark:bg-red-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-red-700 transition">
+      Ver mas
+    </button>
+  </div>
+</article>
+
+
+<article class="group relative bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg border border-transparent hover:border-red-500/50 transition-all duration-500 hover:-translate-y-2">
+  <div class="absolute top-4 right-4 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded-full">NUEVO</div>
+  
+  <div class="overflow-hidden rounded-lg">
+    <img src="img/ryzen9.png" class="w-full h-48 object-contain transform group-hover:scale-110 transition-transform duration-500">
+  </div>
+  
+  <h4 class="font-bold mt-4 text-xl tracking-tight">Ryzen 9 9950X3D</h4>
+  <p class="text-gray-500 dark:text-gray-400 text-sm mb-4">Arquitectura RDNA 4 avanzada.</p>
+  
+  <div class="flex items-center justify-between">
+    <span class="text-2xl font-black text-red-600">MSRP $449</span>
+    <button class="bg-gray-900 dark:bg-red-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-red-700 transition">
+      Ver mas
+    </button>
+  </div>
+</article>
+
+
+    </aside>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-900 text-white text-center py-4 shadow-sm">
+    Rafa&Fram Corp.© 2025
+  </footer>
+
+  <!-- JS -->
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const darkBtn = document.getElementById("darkBtn");
+
+    // Menú animado (slide)
+    menuBtn.addEventListener("click", () => {
+      if (mobileMenu.classList.contains("max-h-0")) {
+        mobileMenu.classList.remove("max-h-0");
+        mobileMenu.classList.add("max-h-96");
+      } else {
+        mobileMenu.classList.add("max-h-0");
+        mobileMenu.classList.remove("max-h-96");
       }
-    </style>
-    <header>
-      <nav>
-        <a href="index.html" class="logo-link">
-    <img src="img/amd-logo.png" class="nav-logo" height="40" alt="Inicio">
-  </a>
-          <ul class="nav-menu">
-    <li><a href="index.html">Inicio</a></li>
-    <li><a href="nosotros.html">Nosotros</a></li>
-    <li><a href="productos.html">Productos</a></li>
-    <li><a href="servicios.html">Servicios</a></li>
-    <li><a href="contacto.html">Contacto</a></li>
-  </ul>
-     
-       <div class="hide"><i class="fa fa-bars"></i></div>
-       <a href="login.html" class="cocotelink"><div class="cocote"><i class="fa-solid fa-user"></i></div></a>
-      
-    </header>
+    });
 
-    <section class="container">
-      <main>
-        <h2><b>TOGETHER WE ADVANCE_</b></h2>
-        <p>
-          Este sitio está diseñado para ofrecer información clara, sencilla y
-       <a href=""></a>   organizada sobre los temas que más te interesan. Nuestro objetivo es
-          crear un lugar donde puedas aprender, explorar ideas y mantenerte
-          informado sin complicaciones.
-        </p>
-        <h2>¿Que encontraras aqui?</h2>
-        <p>
-          En esta página puedes encontrar artículos, guías y recursos pensados
-          para ayudarte en tu día a día. Nos enfocamos en: Explicaciones simples
-          y directas Contenido organizado por categorías Diseño rápido, ligero y
-          compatible con cualquier dispositivo
-        </p>
-        <h2>Nuestro compromiso</h2>
-        <p>
-          Trabajamos constantemente en mejorar el contenido para que siempre
-          tengas acceso a información confiable, actualizada y bien presentada.
-          Queremos que esta web sea un punto de referencia para quienes buscan
-          aprender y crecer.
-        </p>
-      </main>
+    // Dark mode toggle
+    darkBtn.addEventListener("click", () => {
+      document.documentElement.classList.toggle("dark");
+    });
+  </script>
 
-      <aside>
-        <h3>Asegurate de revisar nuestros productos mas buscados</h3>
-        <p></p>
-        <article class="producto">
-        <img src="img/rx 9070xt.png" alt="RX 9070XT">
-        <h4>RX 9070XT</h4>
-        <span class="precio">MSRP $649</span>
-      </article>
-        <article class="producto">
-        <img src="img/ryzen9.png" alt="Ryzen 9">
-        <h4>Ryzen 9 9950X3D</h4>
-        <span class="precio">MSRP $449</span>
-      </article>
-      <div class="centrar">
-        <span class="badge">Mas en <a href="productos.html">Productos</a></span>
-      </div>
-      </aside>
-
-    </section>
-
-    <footer>Rafa&Fram Corp.© 2025 - Todos los derechos reservados.</footer>
-
-  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-<script>
-  $(".hide").on("click", function () {
-    $("nav ul").toggle("slow");
-
-    // aparece y desaparece alternadamente
-    $(".cocotelink").toggle();
-  });
-
-  $(window).on("resize", function () {
-    if ($(window).width() > 768) {
-      $("nav ul").removeAttr("style");
-      $(".cocotelink").show(); // en escritorio siempre visible
-    }
-  });
-
-  $(document).ready(function () {
-    if ($(window).width() > 768) {
-      $("nav ul").removeAttr("style");
-      $(".cocotelink").show();
-    } else {
-      $("nav ul").hide();
-    }
-  });
-</script>
-    
-   <!--<audio controls autoplay muted>
-  <source src="audiovideo/itazura [DyekqO2I1UI].opus" type="audio/mpeg">
-  Tu navegador no soporta el audio.
-</audio>
---> 
-  </body>
+</body>
 </html>
