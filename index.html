@@ -33,7 +33,7 @@
     </div>
 
     <ul class="hidden md:flex gap-12 font-medium mx-auto">
-      <li><a href="#" class="hover:text-gray-300 transition">Inicio</a></li>
+      <li><a href="index.html" class="hover:text-gray-300 transition">Inicio</a></li>
       <li><a href="nosotros.html" class="hover:text-gray-300 transition">Nosotros</a></li>
       <li><a href="productos.html" class="hover:text-gray-300 transition">Productos</a></li>
       <li><a href="servicios.html" class="hover:text-gray-300 transition">Servicios</a></li>
@@ -41,11 +41,11 @@
     </ul>
 
     <div class="flex items-center gap-4">
-      <button id="darkBtn" class="text-xl hover:text-yellow-400 transition active:rotate-45">
+      <button id="darkBtn" class="text-xl hover:text-yellow-200 transition active:rotate-45">
         <i class="fa-solid fa-moon"></i>
       </button>
 
-      <a href="login.html" class="hidden md:block text-xl hover:text-gray-300 transition">
+      <a href="login.html" class="hidden md:block text-xl hover:text-yellow-200 transition">
         <i class="fa-solid fa-user"></i>
       </a>
 
@@ -58,13 +58,13 @@
 
   <div id="mobileMenu" class="md:hidden overflow-hidden max-h-0 transition-all duration-500 px-4 bg-red-700 dark:bg-red-900">
     <ul class="flex flex-col gap-3 py-4 ">
-      <li><a href="#" class="block py-2">Inicio</a></li>
+      <li><a href="index.html" class="block py-2">Inicio</a></li>
       <li><a href="nosotros.html" class="block py-2">Nosotros</a></li>
       <li><a href="productos.html" class="block py-2">Productos</a></li>
       <li><a href="servicios.html" class="block py-2">Servicios</a></li>
       <li><a href="contacto.html" class="block py-2">Contacto</a></li>
       <li class="border-t border-red-500 pt-2">
-        <a href="login.html" class="flex items-center gap-2 py-2">
+        <a href="login.html" class="flex items-center gap-2 py-2 hover:text-yellow-200">
           <i class="fa-solid fa-user"></i> Login
         </a>
       </li>
@@ -147,7 +147,6 @@
   <script>
     const menuBtn = document.getElementById("menuBtn");
     const mobileMenu = document.getElementById("mobileMenu");
-    const darkBtn = document.getElementById("darkBtn");
 
     // Menú animado (slide)
     menuBtn.addEventListener("click", () => {
@@ -160,11 +159,66 @@
       }
     });
 
-    // Dark mode toggle
-    darkBtn.addEventListener("click", () => {
-      document.documentElement.classList.toggle("dark");
-    });
+  
   </script>
+      <script>
+        // Lógica de Gráficos
+        document.addEventListener('DOMContentLoaded', () => {
+            const isDark = document.documentElement.classList.contains('dark');
+            const textColor = isDark ? '#fff' : '#666';
+
+            new Chart(document.getElementById('revenueMixChart'), {
+                type: 'doughnut',
+                data: {
+                    labels: ['Data Center', 'Client', 'Gaming', 'Embedded'],
+                    datasets: [{
+                        data: [50, 25, 15, 10],
+                        backgroundColor: ['#ED1C24', '#444', '#718096', '#CBD5E0'],
+                        borderWidth: 0
+                    }]
+                },
+                options: { 
+                    maintainAspectRatio: false,
+                    plugins: { legend: { labels: { color: '#fff' } } }
+                }
+            });
+
+            new Chart(document.getElementById('growthChart'), {
+                type: 'line',
+                data: {
+                    labels: ['2020', '2022', '2024', '2026'],
+                    datasets: [{
+                        label: 'Ingresos ($B)',
+                        data: [1.7, 6.0, 12.0, 15.5],
+                        borderColor: '#ED1C24',
+                        tension: 0.4,
+                        fill: true,
+                        backgroundColor: 'rgba(237, 28, 36, 0.1)'
+                    }]
+                },
+                options: { 
+                    maintainAspectRatio: false,
+                    scales: { 
+                        y: { ticks: { color: '#aaa' } },
+                        x: { ticks: { color: '#aaa' } }
+                    }
+                }
+            });
+        });
+
+        // Dark Mode Toggle
+        const darkBtn = document.getElementById("darkBtn");
+        darkBtn.addEventListener("click", () => {
+            document.documentElement.classList.toggle("dark");
+            // Cambiar icono
+            const icon = darkBtn.querySelector('i');
+            if(document.documentElement.classList.contains('dark')) {
+                icon.classList.replace('fa-moon', 'fa-sun');
+            } else {
+                icon.classList.replace('fa-sun', 'fa-moon');
+            }
+        });
+    </script>
 
 </body>
 </html>
