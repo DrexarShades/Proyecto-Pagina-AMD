@@ -3,62 +3,77 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Servicios</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/serv.css">
     <link rel="stylesheet" href="css/servicio.css">
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <script src="js/display.js"></script>
-  </head>
-  <body>
-    <header>
-      <nav>
-        <a href="index.html" class="logo-link">
-    <img src="img/amd-logo.png" class="nav-logo" height="40" alt="Inicio">
-  </a>
-          <ul class="nav-menu">
-    <li><a href="index.html">Inicio</a></li>
-    <li><a href="nosotros.html">Nosotros</a></li>
-    <li><a href="productos.html">Productos</a></li>
-    <li><a href="servicios.html">Servicios</a></li>
-    <li><a href="contacto.html">Contacto</a></li>
-  </ul>
-     
-       <div class="hide"><i class="fa fa-bars"></i></div>
-       <a href="login.html" title="Inicia Sesion / Registrate"><div class="cocote"><i class="fa-solid fa-user"></i></div></a>
-    </header>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="scripts/tailwind1.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 
-<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script>
-      $(".hide").on("click", function () {
-        $("nav ul").toggle("slow");
-      });
-
-      // Parche: al redimensionar, quitar style inline o mostrar/ocultar según el ancho
-      $(window).on("resize", function () {
-        if ($(window).width() > 768) {
-          // elimina cualquier 'display' inline que dejó jQuery para que mande el CSS
-          $("nav ul").removeAttr("style");
-        } else {
-          // opcional: ocultar cuando sea menor a 768 (si quieres)
-          // $("nav ul").hide();|
+        tailwind.config = {
+            darkMode: 'class'
         }
-      });
-
-      // Ejecutar una vez al cargar para asegurar estado correcto
-      $(document).ready(function () {
-        if ($(window).width() > 768) $("nav ul").removeAttr("style");
-        else $("nav ul").hide();
-      });
     </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .chart-container { position: relative; height: 300px; width: 100%; }
+    </style>
+</head>
+<body class="antialiased bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-500">
 
-<main><h1>Servicios Disponibles</h1>
+     <header class="sticky top-0 z-50 bg-gradient-to-r from-red-700 via-red-600 to-red-500 dark:from-red-800 dark:via-red-700 dark:to-red-600 shadow-md backdrop-blur-sm transition-all duration-500 text-white">
+  <nav class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
 
-<section class="servicios-container">
+    <div class="flex-shrink-0">
+      <a href="index.html">
+        <img src="img/amd-logo.png" class="h-10" alt="Logo">
+      </a>
+    </div>
 
+    <ul class="hidden md:flex gap-12 font-medium mx-auto">
+      <li><a href="index.html" class="hover:text-gray-300 transition">Inicio</a></li>
+      <li><a href="nosotros.html" class="hover:text-gray-300 transition">Nosotros</a></li>
+      <li><a href="productos.html" class="hover:text-gray-300 transition">Productos</a></li>
+      <li><a href="servicios.html" class="hover:text-gray-300 transition">Servicios</a></li>
+      <li><a href="contacto.html" class="hover:text-gray-300 transition">Contacto</a></li>
+    </ul>
+
+    <div class="flex items-center gap-4">
+      <button id="darkBtn" class="text-xl hover:text-yellow-200 transition active:rotate-45">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+
+      <a href="login.html" class="hidden md:block text-xl hover:text-yellow-200 transition">
+        <i class="fa-solid fa-user"></i>
+      </a>
+
+      <button id="menuBtn" class="md:hidden text-2xl">
+        <i class="fa fa-bars"></i>
+      </button>
+    </div>
+
+  </nav>
+
+  <div id="mobileMenu" class="md:hidden overflow-hidden max-h-0 transition-all duration-500 px-4 bg-red-700 dark:bg-red-900">
+    <ul class="flex flex-col gap-3 py-4 ">
+      <li><a href="index.html" class="block py-2">Inicio</a></li>
+      <li><a href="nosotros.html" class="block py-2">Nosotros</a></li>
+      <li><a href="productos.html" class="block py-2">Productos</a></li>
+      <li><a href="servicios.html" class="block py-2">Servicios</a></li>
+      <li><a href="contacto.html" class="block py-2">Contacto</a></li>
+      <li class="border-t border-red-500 pt-2">
+        <a href="login.html" class="flex items-center gap-2 py-2 hover:text-yellow-200">
+          <i class="fa-solid fa-user"></i> Login
+        </a>
+      </li>
+    </ul>
+  </div>
+</header>
+
+<main class="bg-white rounded-2xl">
+
+<section class="servicios-container bg-white">
+<h1 class="text-3xl font-bold mb-5">Servicios Disponibles</h1>
   <div class="servicio">
     <div class="servicio-titulo">Controladores (Drivers) y Software</div>
     <div class="servicio-contenido">
@@ -92,6 +107,7 @@
       Servicios de garantía, descargas técnicas, documentación y recursos para
       desarrolladores de software y hardware, incluyendo plataformas como Vitis
       para aplicaciones embebidas.
+    <a href="https://www.amd.com/en/support.html" title="Soporte AMD">https://www.amd.com/en/support.html</a>  
     </div>
   </div>
 
@@ -111,6 +127,24 @@
   });
 </script>
 </main>
- <footer>Rafa&Fram Corp.© 2025 - Todos los derechos reservados.</footer>
+ <footer class="bg-gray-900 text-white text-center py-4 shadow-sm">
+    Rafa&Fram Corp.© 2025
+  </footer>
+    <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    // Menú animado (slide)
+    menuBtn.addEventListener("click", () => {
+      if (mobileMenu.classList.contains("max-h-0")) {
+        mobileMenu.classList.remove("max-h-0");
+        mobileMenu.classList.add("max-h-96");
+      } else {
+        mobileMenu.classList.add("max-h-0");
+        mobileMenu.classList.remove("max-h-96");
+      }
+    });
+
+  </script>
   </body>
 </html>

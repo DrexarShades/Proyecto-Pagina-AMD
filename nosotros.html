@@ -4,467 +4,142 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AMD: Estrategia y Gestión Institucional</title>
-    <!-- Tailwind CSS -->
-    <script src="scripts/tailwind.js"></script>
-    <script src="scripts/chart.js"></script>
-    <!-- Google Fonts: Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-        <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+      <link rel="icon" href="img/favicon.ico">
+    <script>
+        tailwind.config = {
+            darkMode: 'class'
+        }
+    </script>
     <style>
-        html{
-  height: 100%;
-}
-
-:root {
-  --gradiennsss: linear-gradient(#ef0707, #bd0000);
-  --rojoam: #ca0505;
-  --rojosi: #bd0000;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh; /* altura minima de viewport */
-  font-family: 'Inter', sans-serif;
- /* background: #f5f7fb; */
-  background: linear-gradient(
-        135deg,
-        #000000 0%,
-        #1a0000 30%,
-        #b11217 60%,
-        #ff1a1a 100%
-    );
-    color: #1e293b;
-    scroll-behavior: smooth;
-}
-
-.container{
-  flex-grow: 1;
-}
-
-header h1 {
-  font-size: 32px;
-  color: white;
-  margin: 0;
-}
-
-/* nav {
-  background: var(--rojoam);
-  display: flex;
-  align-items: center;
-  justify-content: center;  centra el UL 
-  padding: 10px 20px;
-  position: relative;
-  border-end-end-radius: 15px;
-  border-bottom-left-radius: 15px;
-} */
-
-
-nav-center {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-}
-
-nav {
-  background: var(--rojoam);
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  align-items: center;
-  padding: 10px 20px;
-}
-
-/* logo a la izquierda */
-.logo-link {
-  justify-self: start;
-}
-
-/* menú perfectamente centrado */
-.nav-menu {
-  justify-self: center;
-  display: flex;
-  gap: 20px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-/* botón hamburguesa a la derecha */
-.hide {
-  justify-self: end;
-}
-
-
-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  gap: 20px;
-}
-
-nav ul li {
-  display: inline-block;
-}
-
-nav ul li a {
-  text-decoration: none;
-  color: white;
-  padding: 14px 20px;
-}
-nav ul li:hover {
-  background-color: var(--rojosi);
-}
-
-.nav-logo {
-  margin-right: auto;
-  order: 0;
-  height: 40px;
-}
-
-nav a{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#invis{
-  opacity: 0;
-}
-
-.hide {
-  display: none;
-  font-size: 22px;
-  padding: 10px;
-  background: var(--rojosi);
-  color: white;
-  cursor: pointer;
-  margin-left: 10px;
-}
-
-footer {
-  background: #222;
-  color: white;
-  padding: 20px;
-  text-align: center;
-  margin-top: 0px;
-}
-
-.cocote {
-  font: normal 18px FontAwesome;
-  color: #FFFFFF;
-}
-
-@media (max-width: 768px) {
-
-  nav {
-    justify-content: space-between;
-  }
-
-  .nav-center {
-    width: 100%;
-  }
-
-  .nav-logo {
-    order: 0;
-    margin-left: 0;
-  }
-
-  /* mostrar boton */
-  .hide {
-    display: block;
-    order: 2;
-    justify-self: end;
-  }
-
-  /* menú oculto inicialmente porque asi es que va */
-  nav ul {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    background: var(--rojoam);
-    text-align: left;
-    padding: 0;
-  }
-
-  nav ul li {
-    width: 100%;
-  }
-
-  nav ul li a {
-    display: block;
-    padding: 15px;
-  }
-
-  article div {
-    width: 100px;
-    height: 100px;
-  }
-  .container.modern {
-    grid-template-columns: 1fr;
-    padding: 20px;
-  }
-  
-}
-
-
-        /* AMD Brand Colors */
-        .amd-red { color: #ED1C24; }
-        .bg-amd-red { background-color: #ED1C24; }
-        .border-amd-red { border-color: #ED1C24; }
-        .amd-black { background-color: #000000; }
-
-        #identity {
-            opacity: 90%;
-        }
-
-        /* Chart Container Strict Styling */
-        .chart-container {
-            position: relative;
-            width: 100%;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            height: 300px;
-            max-height: 400px;
-        }
-        @media (min-width: 768px) {
-            .chart-container {
-                height: 350px;
-            }
-        }
-
-        /* Interactive Element Styling */
-        .nav-item.active {
-            border-bottom: 2px solid #ED1C24;
-            font-weight: 700;
-            color: #000;
-        }
-
-        .card-hover {
-            transition: all 0.3s ease;
-        }
-        .card-hover:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-        }
-
-        .pillar-content {
-            display: none;
-            animation: fadeIn 0.5s ease-in-out;
-        }
-        .pillar-content.active {
-            display: block;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+        body { font-family: 'Inter', sans-serif; }
+        .chart-container { position: relative; height: 300px; width: 100%; }
     </style>
 </head>
-<body class="antialiased">
+<body class="antialiased bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-500">
 
-     <header>
-      <nav>
-        <a href="index.html" class="logo-link">
-    <img src="img/amd-logo.png" class="nav-logo" id="nav-logo" height="40px" alt="Inicio">
-  </a>
-          <ul class="nav-menu">
-    <li><a href="index.html">Inicio</a></li>
-    <li><a href="nosotros.html">Nosotros</a></li>
-    <li><a href="productos.html">Productos</a></li>
-    <li><a href="servicios.html">Servicios</a></li>
-    <li><a href="contacto.html">Contacto</a></li>
-  </ul>
-     
-              <div class="hide"><i class="fa fa-bars"></i></div>
-       <a href="login.html"><div class="cocote"><i class="fa-solid fa-user"></i></div></a>
-      
-    </header>
-    <section id="identity" class="py-16 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+     <header class="sticky top-0 z-50 bg-gradient-to-r from-red-700 via-red-600 to-red-500 dark:from-red-800 dark:via-red-700 dark:to-red-600 shadow-md backdrop-blur-sm transition-all duration-500 text-white">
+  <nav class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+
+    <div class="flex-shrink-0">
+      <a href="index.html">
+        <img src="img/amd-logo.png" class="h-10" alt="Logo">
+      </a>
+    </div>
+
+    <ul class="hidden md:flex gap-12 font-medium mx-auto">
+      <li><a href="index.html" class="hover:text-gray-300 transition">Inicio</a></li>
+      <li><a href="nosotros.html" class="hover:text-gray-300 transition">Nosotros</a></li>
+      <li><a href="productos.html" class="hover:text-gray-300 transition">Productos</a></li>
+      <li><a href="servicios.html" class="hover:text-gray-300 transition">Servicios</a></li>
+      <li><a href="contacto.html" class="hover:text-gray-300 transition">Contacto</a></li>
+    </ul>
+
+    <div class="flex items-center gap-4">
+      <button id="darkBtn" class="text-xl hover:text-yellow-200 transition active:rotate-45">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+
+      <a href="login.html" class="hidden md:block text-xl hover:text-yellow-200 transition">
+        <i class="fa-solid fa-user"></i>
+      </a>
+
+      <button id="menuBtn" class="md:hidden text-2xl">
+        <i class="fa fa-bars"></i>
+      </button>
+    </div>
+
+  </nav>
+
+  <div id="mobileMenu" class="md:hidden overflow-hidden max-h-0 transition-all duration-500 px-4 bg-red-700 dark:bg-red-900">
+    <ul class="flex flex-col gap-3 py-4 ">
+      <li><a href="index.html" class="block py-2">Inicio</a></li>
+      <li><a href="nosotros.html" class="block py-2">Nosotros</a></li>
+      <li><a href="productos.html" class="block py-2">Productos</a></li>
+      <li><a href="servicios.html" class="block py-2">Servicios</a></li>
+      <li><a href="contacto.html" class="block py-2">Contacto</a></li>
+      <li class="border-t border-red-500 pt-2">
+        <a href="login.html" class="flex items-center gap-2 py-2 hover:text-yellow-200">
+          <i class="fa-solid fa-user"></i> Login
+        </a>
+      </li>
+    </ul>
+  </div>
+</header>
+
+    <section id="identity" class="py-16 bg-gray-50 dark:bg-gray-800/50 transition-all">
+        <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-12">
-                <h2 class="text-base font-semibold text-[#ED1C24] tracking-wide uppercase">Identidad Corporativa</h2>
-                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-                    El ADN de AMD
-                </p>
-                <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
-                    La base filosófica que guía cada decisión, desde el diseño de transistores hasta la estrategia global.
-                </p>
+                <h2 class="text-red-600 dark:text-red-500 font-bold uppercase tracking-widest text-sm">Identidad Corporativa</h2>
+                <p class="text-4xl font-extrabold mt-2 dark:text-white">El ADN de AMD</p>
             </div>
 
-           
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      
-                <div class="bg-white overflow-hidden shadow rounded-lg card-hover cursor-pointer border-t-4 border-gray-200 hover:border-[#ED1C24]" onclick="showIdentityDetail('mision')">
-                    <div class="px-4 py-5 sm:p-6 text-center">
-                        <div class="text-4xl mb-4">🚀</div>
-                        <h3 class="text-lg leading-6 font-medium text-gray-900">Misión</h3>
-                        <p class="mt-2 text-sm text-gray-500">El propósito fundamental de nuestra existencia.</p>
-                        <button class="mt-4 text-[#ED1C24] font-bold text-sm">Leer más &rarr;</button>
-                    </div>
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg border-t-4 border-red-600">
+                    <div class="text-4xl mb-4">🚀</div>
+                    <h3 class="text-xl font-bold mb-3 dark:text-white">Misión</h3>
+                    <p class="text-gray-600 dark:text-gray-300">"Construir productos excelentes que aceleren las experiencias informáticas de próxima generación."</p>
+                    <p class="mt-4 text-sm text-gray-500 dark:text-gray-400 italic">Nos centramos en la excelencia del producto para habilitar experiencias antes imposibles.</p>
                 </div>
-
-             
-                <div class="bg-white overflow-hidden shadow rounded-lg card-hover cursor-pointer border-t-4 border-gray-200 hover:border-[#ED1C24]" onclick="showIdentityDetail('vision')">
-                    <div class="px-4 py-5 sm:p-6 text-center">
-                        <div class="text-4xl mb-4">👁️</div>
-                        <h3 class="text-lg leading-6 font-medium text-gray-900">Visión</h3>
-                        <p class="mt-2 text-sm text-gray-500">Hacia dónde dirigimos el futuro de la tecnología.</p>
-                        <button class="mt-4 text-[#ED1C24] font-bold text-sm">Leer más &rarr;</button>
-                    </div>
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg border-t-4 border-red-600">
+                    <div class="text-4xl mb-4">👁️</div>
+                    <h3 class="text-xl font-bold mb-3 dark:text-white">Visión</h3>
+                    <p class="text-gray-600 dark:text-gray-300">"La computación de alto rendimiento y adaptativa está transformando nuestras vidas."</p>
+                    <p class="mt-4 text-sm text-gray-500 dark:text-gray-400 italic">Visualizamos un mundo donde nuestra tecnología resuelve los desafíos más difíciles de la humanidad.</p>
                 </div>
-
-             
-                <div class="bg-white overflow-hidden shadow rounded-lg card-hover cursor-pointer border-t-4 border-gray-200 hover:border-[#ED1C24]" onclick="showIdentityDetail('valores')">
-                    <div class="px-4 py-5 sm:p-6 text-center">
-                        <div class="text-4xl mb-4">💎</div>
-                        <h3 class="text-lg leading-6 font-medium text-gray-900">Valores</h3>
-                        <p class="mt-2 text-sm text-gray-500">Los principios culturales que nos definen.</p>
-                        <button class="mt-4 text-[#ED1C24] font-bold text-sm">Leer más &rarr;</button>
-                    </div>
-                </div>
-            </div>
-
-            
-            <div id="identity-display" class="mt-10 bg-white rounded-xl shadow-lg border border-gray-100 p-8 transition-all duration-500">
-                <div class="text-center">
-                    <h3 id="id-title" class="text-2xl font-bold text-gray-900 mb-4">Seleccione una tarjeta arriba</h3>
-                    <p id="id-desc" class="text-lg text-gray-600">Explore los componentes fundamentales de la gestión estratégica de AMD haciendo clic en las tarjetas.</p>
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg border-t-4 border-red-600">
+                    <div class="text-4xl mb-4">💎</div>
+                    <h3 class="text-xl font-bold mb-3 dark:text-white">Valores</h3>
+                    <ul class="text-gray-600 dark:text-gray-300 space-y-2 text-sm">
+                        <li><strong>• Innovación Incesante:</strong> Nunca conformarse.</li>
+                        <li><strong>• Clientes Primero:</strong> Su éxito es el nuestro.</li>
+                        <li><strong>• Colaboración:</strong> Un solo equipo global.</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-   
-    <section id="strategy" class="py-16 bg-white border-t border-gray-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="lg:text-center mb-10">
-                <h2 class="text-base font-semibold text-[#ED1C24] tracking-wide uppercase">Dirección Estratégica</h2>
-                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-                    Metas y Objetivos Prioritarios
-                </p>
-                <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
-                    AMD ha transformado su modelo de negocio enfocándose en cuatro pilares estratégicos para asegurar el liderazgo en computación de alto rendimiento.
-                </p>
+    <section id="strategy" class="py-16 bg-white dark:bg-gray-900 transition-all duration-500">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-red-600 dark:text-red-500 font-bold uppercase tracking-widest text-sm">Dirección Estratégica</h2>
+                <p class="text-4xl font-extrabold mt-2 dark:text-white">Metas y Objetivos Prioritarios</p>
             </div>
 
-            <div class="flex flex-col lg:flex-row gap-8">
-     
-                <div class="lg:w-1/3 flex flex-col space-y-2">
-                    <button onclick="switchPillar(0)" id="btn-pillar-0" class="pillar-btn text-left px-6 py-4 rounded-lg bg-gray-50 hover:bg-gray-100 focus:outline-none transition border-l-4 border-transparent active-pillar">
-                        <span class="font-bold block text-gray-900">1. Data Center First</span>
-                        <span class="text-sm text-gray-500">Prioridad en Centros de Datos</span>
-                    </button>
-                    <button onclick="switchPillar(1)" id="btn-pillar-1" class="pillar-btn text-left px-6 py-4 rounded-lg bg-white hover:bg-gray-50 focus:outline-none transition border-l-4 border-transparent">
-                        <span class="font-bold block text-gray-900">2. IA Generalizada (Pervasive AI)</span>
-                        <span class="text-sm text-gray-500">Liderazgo en Inteligencia Artificial</span>
-                    </button>
-                    <button onclick="switchPillar(2)" id="btn-pillar-2" class="pillar-btn text-left px-6 py-4 rounded-lg bg-white hover:bg-gray-50 focus:outline-none transition border-l-4 border-transparent">
-                        <span class="font-bold block text-gray-900">3. Arquitectura de PC</span>
-                        <span class="text-sm text-gray-500">Innovación en Gaming y Clientes</span>
-                    </button>
-                    <button onclick="switchPillar(3)" id="btn-pillar-3" class="pillar-btn text-left px-6 py-4 rounded-lg bg-white hover:bg-gray-50 focus:outline-none transition border-l-4 border-transparent">
-                        <span class="font-bold block text-gray-900">4. Software y Ecosistema</span>
-                        <span class="text-sm text-gray-500">Plataformas unificadas (ROCm)</span>
-                    </button>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="p-6 rounded-xl bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700">
+                    <div class="w-12 h-12 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600 mb-4">☁️</div>
+                    <h3 class="font-bold text-lg mb-2 dark:text-white">Data Center First</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Consolidar AMD EPYC™ como columna vertebral de la nube. Aumentar cuota de mercado empresarial.</p>
                 </div>
-
-            
-                <div class="lg:w-2/3 bg-gray-50 rounded-2xl p-8 relative min-h-[300px] flex items-center">
- 
-                    <div id="pillar-content-0" class="pillar-content active w-full">
-                        <div class="flex items-center mb-4">
-                            <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 text-2xl mr-4">☁️</div>
-                            <h3 class="text-2xl font-bold text-gray-900">Data Center First</h3>
-                        </div>
-                        <p class="text-gray-700 text-lg mb-4">
-                            El objetivo principal es consolidar los procesadores <strong>AMD EPYC™</strong> como la columna vertebral de la infraestructura en la nube moderna.
-                        </p>
-                        <ul class="space-y-2 text-gray-600">
-                            <li class="flex items-start">
-                                <span class="text-green-500 mr-2">✓</span> Aumentar la cuota de mercado en servidores empresariales.
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-green-500 mr-2">✓</span> Ofrecer el mejor TCO (Costo Total de Propiedad) para proveedores de nube.
-                            </li>
-                        </ul>
-                    </div>
-
-        
-                    <div id="pillar-content-1" class="pillar-content w-full">
-                        <div class="flex items-center mb-4">
-                            <div class="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 text-2xl mr-4">🤖</div>
-                            <h3 class="text-2xl font-bold text-gray-900">IA Generalizada</h3>
-                        </div>
-                        <p class="text-gray-700 text-lg mb-4">
-                            Integrar motores de IA en toda la cartera de productos, desde aceleradores <strong>Instinct™</strong> para supercomputadoras hasta Ryzen™ AI en laptops.
-                        </p>
-                        <ul class="space-y-2 text-gray-600">
-                            <li class="flex items-start">
-                                <span class="text-green-500 mr-2">✓</span> Desafiar el dominio del mercado en entrenamiento e inferencia de IA.
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-green-500 mr-2">✓</span> Adquisición estratégica de empresas de software de IA (ej. Nod.ai).
-                            </li>
-                        </ul>
-                    </div>
-
-                
-                    <div id="pillar-content-2" class="pillar-content w-full">
-                        <div class="flex items-center mb-4">
-                            <div class="w-12 h-12 rounded-full bg-red-100 flex items-center justify-center text-red-600 text-2xl mr-4">🎮</div>
-                            <h3 class="text-2xl font-bold text-gray-900">Liderazgo en PC y Gaming</h3>
-                        </div>
-                        <p class="text-gray-700 text-lg mb-4">
-                            Mantener la lealtad en el segmento de juegos y expandir la presencia en PCs comerciales premium.
-                        </p>
-                        <ul class="space-y-2 text-gray-600">
-                            <li class="flex items-start">
-                                <span class="text-green-500 mr-2">✓</span> Dominio en consolas (PS5, Xbox) y expansión a dispositivos portátiles.
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-green-500 mr-2">✓</span> Liderazgo en rendimiento por vatio.
-                            </li>
-                        </ul>
-                    </div>
-
-                
-                    <div id="pillar-content-3" class="pillar-content w-full">
-                        <div class="flex items-center mb-4">
-                            <div class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center text-green-600 text-2xl mr-4">💻</div>
-                            <h3 class="text-2xl font-bold text-gray-900">Software Unificado</h3>
-                        </div>
-                        <p class="text-gray-700 text-lg mb-4">
-                            Eliminar barreras de adopción mediante software abierto y accesible (ROCm™) para competir con CUDA.
-                        </p>
-                        <ul class="space-y-2 text-gray-600">
-                            <li class="flex items-start">
-                                <span class="text-green-500 mr-2">✓</span> Crear un ecosistema abierto para desarrolladores.
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-green-500 mr-2">✓</span> Optimización de bibliotecas populares (PyTorch, TensorFlow).
-                            </li>
-                        </ul>
-                    </div>
-
+                <div class="p-6 rounded-xl bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700">
+                    <div class="w-12 h-12 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center text-purple-600 mb-4">🤖</div>
+                    <h3 class="font-bold text-lg mb-2 dark:text-white">IA Generalizada</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Integrar IA en Instinct™ y Ryzen™ AI. Desafiar el dominio del mercado de inferencia.</p>
+                </div>
+                <div class="p-6 rounded-xl bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700">
+                    <div class="w-12 h-12 rounded-full bg-red-100 dark:bg-red-900/30 flex items-center justify-center text-red-600 mb-4">🎮</div>
+                    <h3 class="font-bold text-lg mb-2 dark:text-white">Liderazgo en PC</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Dominio en consolas de nueva generación y expansión en laptops premium comerciales.</p>
+                </div>
+                <div class="p-6 rounded-xl bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700">
+                    <div class="w-12 h-12 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center text-green-600 mb-4">💻</div>
+                    <h3 class="font-bold text-lg mb-2 dark:text-white">Software Unificado</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Impulsar ROCm™ como ecosistema abierto frente a soluciones cerradas de la competencia.</p>
                 </div>
             </div>
         </div>
     </section>
-    <section id="history" class="py-16 bg-white border-t border-gray-100">
+
+    <section id="history" class="py-16 bg-white border-t border-red-500 dark:bg-gray-900 transition-all duration-500">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
             <h2 class="text-base font-semibold text-[#ED1C24] tracking-wide uppercase">Nuestra Trayectoria</h2>
-            <p class="mt-2 text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+            <p class="mt-2 text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl dark:text-gray-200">
                 Más de 50 años de Innovación
             </p>
             <div class="mt-4 max-w-3xl mx-auto h-1 bg-gradient-to-r from-transparent via-[#ED1C24] to-transparent"></div>
@@ -472,9 +147,9 @@ footer {
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div class="space-y-6">
-                <div class="bg-gray-50 p-8 rounded-2xl border-l-8 border-[#ED1C24] shadow-sm">
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Liderazgo en Computación</h3>
-                    <p class="text-gray-600 leading-relaxed text-lg">
+                <div class="bg-gray-50 p-8 rounded-2xl border-l-8 border-[#ED1C24] shadow-sm dark:bg-gray-900">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 dark:text-gray-200 dark:bg-gray-900">Liderazgo en Computación</h3>
+                    <p class="text-gray-600 leading-relaxed text-lg dark:text-gray-200">
                         AMD es el líder de computación de alto rendimiento y adaptable, impulsando productos que resuelven los desafíos más importantes del mundo. Nuestras tecnologías avanzan el futuro de los <strong>centros de datos, sistemas integrados, gaming y PC.</strong>
                     </p>
                 </div>
@@ -484,28 +159,28 @@ footer {
                         <i class="fa fa-rocket text-2xl"></i>
                     </div>
                     <div>
-                        <h4 class="font-bold text-gray-900">Desde Silicon Valley</h4>
-                        <p class="text-gray-600 text-sm">Fundada en 1969 como una start-up con el objetivo de redefinir los semiconductores.</p>
+                        <h4 class="font-bold text-gray-900 dark:text-gray-200">Desde Silicon Valley</h4>
+                        <p class="text-gray-600 text-sm dark:text-gray-400">Fundada en 1969 como una start-up con el objetivo de redefinir los semiconductores.</p>
                     </div>
                 </div>
             </div>
 
             <div class="relative">
                 <div class="absolute -inset-4 bg-gradient-to-tr from-[#ED1C24] to-red-400 opacity-10 blur-2xl rounded-full"></div>
-                <div class="relative bg-white p-8 rounded-2xl shadow-xl border border-gray-100">
-                    <span class="text-5xl font-black text-gray-100 absolute top-2 right-4 select-none">1969</span>
-                    <h3 class="text-xl font-bold text-[#ED1C24] mb-2">El Comienzo</h3>
-                    <p class="text-gray-600 italic mb-6">
+                <div class="relative bg-white p-8 rounded-2xl shadow-xl border border-gray-100 dark:bg-gray-900">
+                    <span class="text-5xl font-black text-gray-600 absolute top-2 right-4 select-none dark:text-gray-200">1969</span>
+                    <h3 class="text-xl font-bold text-[#ED1C24] mb-2 dark:text-gray-200">El Comienzo</h3>
+                    <p class="text-gray-600 italic mb-6 dark:text-gray-400">
                         "Comenzamos con decenas de empleados enfocados en productos de última generación. Hoy establecemos el estándar global."
                     </p>
                     <div class="space-y-4">
                         <div class="flex items-center justify-between text-sm border-b pb-2">
                             <span class="text-gray-500 italic">Alcance</span>
-                            <span class="font-semibold text-gray-900 text-right">Global (Empresa Fortune 500)</span>
+                            <span class="font-semibold text-gray-900 text-right dark:text-gray-200">Global (Empresa Fortune 500)</span>
                         </div>
                         <div class="flex items-center justify-between text-sm border-b pb-2">
                             <span class="text-gray-500 italic">Impacto</span>
-                            <span class="font-semibold text-gray-900 text-right">Supercomputación y AI</span>
+                            <span class="font-semibold text-gray-900 text-right dark:text-gray-200">Supercomputación y AI</span>
                         </div>
                     </div>
                 </div>
@@ -513,36 +188,21 @@ footer {
         </div>
     </div>
 </section>
-   
+
     <section id="dashboard" class="py-16 bg-gray-900 text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="mb-12">
-                <h2 class="text-3xl font-bold text-white mb-4">Metas Cuantitativas y Resultados</h2>
-                <p class="text-gray-400 max-w-3xl">
-                    La estrategia de AMD ha resultado en un cambio significativo en su mezcla de ingresos, pasando de ser una empresa centrada en PCs a un líder en Data Centers.
-                </p>
-            </div>
-
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8 text-center">Metas Cuantitativas</h2>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
-
-                <div class="bg-gray-800 rounded-xl p-6 shadow-xl border border-gray-700">
-                    <h3 class="text-xl font-semibold mb-2">Transformación de Ingresos</h3>
-                    <p class="text-sm text-gray-400 mb-6">Objetivo: Diversificación hacia mercados de alto margen (Data Center & Embedded).</p>
-                    <div class="chart-container">
-                        <canvas id="revenueMixChart"></canvas>
-                    </div>
-                    <div class="mt-4 text-center text-sm text-gray-400 italic">
-                        *Datos aproximados basados en informes fiscales recientes (FY 2023/24).
-                    </div>
+                <div class="bg-gray-800 p-6 rounded-xl border border-gray-700">
+                    <h3 class="text-xl mb-4">Transformación de Ingresos</h3>
+                    <div class="chart-container"><canvas id="revenueMixChart"></canvas></div>
                 </div>
-
-                <div class="bg-gray-800 rounded-xl p-6 shadow-xl border border-gray-700">
-                    <h3 class="text-xl font-semibold mb-2">Crecimiento de Cuota en Servidores</h3>
-                    <p class="text-sm text-gray-400 mb-6">Objetivo: Capturar >30% del mercado de servidores empresariales.</p>
-                    <div class="chart-container">
-                        <canvas id="growthChart"></canvas>
-                    </div>
-                    <div class="mt-4 flex justify-around text-sm">
+                <div class="bg-gray-800 p-6 rounded-xl border border-gray-700">
+                    <h3 class="text-xl mb-4">Crecimiento Data Center</h3>
+                    <div class="chart-container"><canvas id="growthChart"></canvas></div>
+                </div>
+            </div>
+            <div class="mt-4 flex justify-around text-sm">
                         <div class="text-center">
                             <span class="block text-2xl font-bold text-[#ED1C24]">+105%</span>
                             <span class="text-gray-400">Ingresos Data Center (YoY)</span>
@@ -552,207 +212,85 @@ footer {
                             <span class="text-gray-400">Meta Eficiencia Energética</span>
                         </div>
                     </div>
-                </div>
-            </div>
         </div>
     </section>
 
-    <section class="py-16 bg-gray-50">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-10">
-                <h2 class="text-2xl font-bold text-gray-900">Objetivos ESG (Ambiental, Social y Gobernanza)</h2>
-                <p class="mt-2 text-gray-600">AMD se compromete no solo con el rendimiento, sino con la eficiencia.</p>
-            </div>
+  <footer class="bg-gray-900 text-white text-center py-4 shadow-sm">
+    Rafa&Fram Corp.© 2025
+  </footer>
+    <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
 
-            <div class="bg-white shadow-lg rounded-lg p-8">
-                <div class="space-y-8">
+    // Menú animado (slide)
+    menuBtn.addEventListener("click", () => {
+      if (mobileMenu.classList.contains("max-h-0")) {
+        mobileMenu.classList.remove("max-h-0");
+        mobileMenu.classList.add("max-h-96");
+      } else {
+        mobileMenu.classList.add("max-h-0");
+        mobileMenu.classList.remove("max-h-96");
+      }
+    });
 
-                    <div>
-                        <div class="flex justify-between items-end mb-2">
-                            <span class="text-lg font-medium text-gray-900">Eficiencia Energética (Nodos HPC & IA)</span>
-                            <span class="text-sm font-bold text-[#ED1C24]">Meta: 30x para 2025</span>
-                        </div>
-                        <div class="w-full bg-gray-200 rounded-full h-4 overflow-hidden">
-                            <div class="bg-black h-4 rounded-full transition-all duration-1000 ease-out" style="width: 85%"></div>
-                        </div>
-                        <p class="text-xs text-gray-500 mt-1">En camino para lograr 30 veces más eficiencia energética en procesadores de servidor.</p>
-                    </div>
-
-                    <div>
-                        <div class="flex justify-between items-end mb-2">
-                            <span class="text-lg font-medium text-gray-900">Reducción de Emisiones (Operaciones)</span>
-                            <span class="text-sm font-bold text-green-600">Meta: -50% vs 2020</span>
-                        </div>
-                        <div class="w-full bg-gray-200 rounded-full h-4 overflow-hidden">
-                            <div class="bg-green-600 h-4 rounded-full transition-all duration-1000 ease-out" style="width: 60%"></div>
-                        </div>
-                        <p class="text-xs text-gray-500 mt-1">Reducción de emisiones de gases de efecto invernadero (Alcance 1 y 2).</p>
-                    </div>
-
-                    <div>
-                        <div class="flex justify-between items-end mb-2">
-                            <span class="text-lg font-medium text-gray-900">Participación en STEM (Mujeres)</span>
-                            <span class="text-sm font-bold text-blue-600">Objetivo: 70% de la fuerza laboral</span>
-                        </div>
-                        <div class="w-full bg-gray-200 rounded-full h-4 overflow-hidden">
-                            <div class="bg-blue-600 h-4 rounded-full transition-all duration-1000 ease-out" style="width: 45%"></div>
-                        </div>
-                        <p class="text-xs text-gray-500 mt-1">Iniciativas para aumentar la diversidad en ingeniería.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
- 
-    <footer>Rafa&Fram Corp.© 2025 - Todos los derechos reservados.</footer>
+  </script>
 
     <script>
-        // --- Data & State ---
-        const identityData = {
-            mision: {
-                title: "Misión",
-                icon: "🚀",
-                text: "Construir productos excelentes que aceleren las experiencias informáticas de próxima generación.",
-                detail: "AMD se centra en la excelencia del producto. No se trata solo de fabricar chips, sino de habilitar experiencias (gaming, ciencia, nube) que antes eran imposibles. La misión es el motor: acelerar el futuro."
-            },
-            vision: {
-                title: "Visión",
-                icon: "👁️",
-                text: "La computación de alto rendimiento y adaptativa está transformando nuestras vidas.",
-                detail: "AMD visualiza un mundo donde su tecnología es omnipresente y esencial para resolver los desafíos más difíciles del mundo, desde la investigación médica hasta el cambio climático, a través de la supercomputación."
-            },
-            valores: {
-                title: "Valores",
-                icon: "💎",
-                text: "Innovación, Ejecución, y Compromiso con el Cliente.",
-                detail: "<ul class='list-disc pl-5 text-left mx-auto max-w-md mt-2 space-y-2'><li><strong>Innovación Incesante:</strong> Nunca conformarse con el status quo.</li><li><strong>Los Clientes Primero:</strong> Su éxito es nuestro éxito.</li><li><strong>Colaboración:</strong> Trabajamos como un solo equipo global.</li></ul>"
-            }
-        };
-
-        // --- Interaction Logic: Identity Section ---
-        function showIdentityDetail(key) {
-            const container = document.getElementById('identity-display');
-            const title = document.getElementById('id-title');
-            const desc = document.getElementById('id-desc');
-            const data = identityData[key];
-
-            // Animate out
-            container.style.opacity = '0.5';
-            
-            setTimeout(() => {
-                // Update content
-                title.innerHTML = `<span class="text-4xl mr-2">${data.icon}</span> ${data.title}`;
-                desc.innerHTML = `<p class="font-semibold text-xl mb-4 text-gray-800">"${data.text}"</p><div class="text-base text-gray-600">${data.detail}</div>`;
-                
-                // Animate in
-                container.style.opacity = '1';
-                
-                // Highlight border style on container
-                container.classList.remove('border-gray-100');
-                container.classList.add('border-red-200');
-            }, 200);
-        }
-
-        // --- Interaction Logic: Strategy Pillars ---
-        function switchPillar(index) {
-            // Update buttons
-            document.querySelectorAll('.pillar-btn').forEach((btn, idx) => {
-                if (idx === index) {
-                    btn.classList.add('bg-gray-50', 'border-l-4', 'border-[#ED1C24]');
-                    btn.classList.remove('bg-white', 'border-transparent');
-                } else {
-                    btn.classList.remove('bg-gray-50', 'border-l-4', 'border-[#ED1C24]');
-                    btn.classList.add('bg-white', 'border-transparent');
-                }
-            });
-
-            // Update content
-            document.querySelectorAll('.pillar-content').forEach((content, idx) => {
-                if (idx === index) {
-                    content.classList.add('active');
-                } else {
-                    content.classList.remove('active');
-                }
-            });
-        }
-
-        // --- Initialization: Charts ---
+        // Lógica de Gráficos
         document.addEventListener('DOMContentLoaded', () => {
-            
-            // Set default styling for content display
-            document.getElementById('btn-pillar-0').classList.add('border-[#ED1C24]'); // Init first tab style
+            const isDark = document.documentElement.classList.contains('dark');
+            const textColor = isDark ? '#fff' : '#666';
 
-            // Chart 1: Revenue Mix (Doughnut)
-            const ctxMix = document.getElementById('revenueMixChart').getContext('2d');
-            new Chart(ctxMix, {
+            new Chart(document.getElementById('revenueMixChart'), {
                 type: 'doughnut',
                 data: {
-                    labels: ['Data Center (AI/Cloud)', 'Client (Ryzen)', 'Gaming (Radeon/Console)', 'Embedded (Xilinx)'],
+                    labels: ['Data Center', 'Client', 'Gaming', 'Embedded'],
                     datasets: [{
-                        data: [50, 25, 15, 10], // Simulated recent mix emphasizing Data Center growth
-                        backgroundColor: [
-                            '#ED1C24', // AMD Red
-                            '#222222', // Black
-                            '#718096', // Gray
-                            '#CBD5E0'  // Light Gray
-                        ],
+                        data: [50, 25, 15, 10],
+                        backgroundColor: ['#ED1C24', '#444', '#718096', '#CBD5E0'],
                         borderWidth: 0
                     }]
                 },
-                options: {
-                    responsive: true,
+                options: { 
                     maintainAspectRatio: false,
-                    plugins: {
-                        legend: {
-                            position: 'right',
-                            labels: { color: '#ffffff', font: { family: 'Inter' } }
-                        }
-                    }
+                    plugins: { legend: { labels: { color: '#fff' } } }
                 }
             });
 
-            // Chart 2: Growth Trend (Line) - Simulated EPYC Market Share/Revenue Growth
-            const ctxGrowth = document.getElementById('growthChart').getContext('2d');
-            new Chart(ctxGrowth, {
+            new Chart(document.getElementById('growthChart'), {
                 type: 'line',
                 data: {
-                    labels: ['2020', '2021', '2022', '2023', '2024 (Est)'],
+                    labels: ['2020', '2022', '2024', '2026'],
                     datasets: [{
-                        label: 'Ingresos Data Center ($B)',
-                        data: [1.7, 3.7, 6.0, 6.5, 12.0], // Reflecting the massive AI boom
+                        label: 'Ingresos ($B)',
+                        data: [1.7, 6.0, 12.0, 15.5],
                         borderColor: '#ED1C24',
-                        backgroundColor: 'rgba(237, 28, 36, 0.1)',
                         tension: 0.4,
                         fill: true,
-                        pointRadius: 4,
-                        pointBackgroundColor: '#fff'
+                        backgroundColor: 'rgba(237, 28, 36, 0.1)'
                     }]
                 },
-                options: {
-                    responsive: true,
+                options: { 
                     maintainAspectRatio: false,
-                    scales: {
-                        y: {
-                            grid: { color: 'rgba(255,255,255,0.1)' },
-                            ticks: { color: '#aaa' }
-                        },
-                        x: {
-                            grid: { display: false },
-                            ticks: { color: '#aaa' }
-                        }
-                    },
-                    plugins: {
-                        legend: {
-                            labels: { color: '#fff' }
-                        },
-                        tooltip: {
-                            mode: 'index',
-                            intersect: false,
-                        }
+                    scales: { 
+                        y: { ticks: { color: '#aaa' } },
+                        x: { ticks: { color: '#aaa' } }
                     }
                 }
             });
+        });
+
+        // Dark Mode Toggle
+        const darkBtn = document.getElementById("darkBtn");
+        darkBtn.addEventListener("click", () => {
+            document.documentElement.classList.toggle("dark");
+            // Cambiar icono
+            const icon = darkBtn.querySelector('i');
+            if(document.documentElement.classList.contains('dark')) {
+                icon.classList.replace('fa-moon', 'fa-sun');
+            } else {
+                icon.classList.replace('fa-sun', 'fa-moon');
+            }
         });
     </script>
 </body>
