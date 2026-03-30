@@ -1,96 +1,136 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Login AMD</title>
-<link rel="stylesheet" href="css/logins.css">
-<!--<link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-    />--> 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-</head>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="scripts/tailwind.js"></script>
+    <title>Inicia Sesion</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="img/favicon.ico">
+  </head>
 <body>
     
 
-    <div class="scene">
-        <div class="card" id="card">
-            
-
-            <!-- LOGIN -->
-            <div class="login-container face front">
-                <img src="img/amd-logo.png" alt="" class="logo">
-                <form class="login-form" action="index.html">
-                    <h2>Inicio de sesión</h2>
-
-                    <div class="input-group">
-                        <label>Usuario <i class="fa-solid fa-user"></i> </label>
-                        <input type="text" required>
-                    </div>
-
-                    <div class="input-group">
-                        <label>Contraseña <i class="fa-solid fa-lock"></i></label>
-                        <input type="password" required>
-                    </div>
-
-                    <div class="input-group">
-                        <a href="#">¿Olvidó su contraseña?</a>
-                    </div>
-
-                    <button type="submit">Iniciar sesión</button>
-
-                    <p class="switch">
-                        ¿No tienes cuenta?
-                        <span onclick="flip()">Regístrate</span>
-                    </p>
-                </form>
-            </div>
-
-            <!-- REGISTRO -->
-            <div class="login-container face back">
-                <form class="login-form" action="index.html">
-                   <img src="img/amd-logo.png" alt="" class="logo">
-                    <h2>Registro</h2>
-                        
-                    <div class="input-group">
-                        <label>Usuario</label>
-                        <input type="text" required>
-                    </div>
-
-                    <div class="input-group">
-                        <label>Correo</label>
-                        <input type="email" required>
-                    </div>
-
-                    <div class="input-group">
-                        <label>Contraseña</label>
-                        <input type="password" required>
-                    </div>
-
-                    <div class="input-group checkbox-group">
-                        <input type="checkbox" id="checkbox" required>
-                        <label for="checkbox">Aceptar condiciones</label>
-                    </div>
-
-                    <button type="submit">Registrarse</button>
-
-                    <p class="switch">
-                        ¿Ya tienes cuenta?
-                        <span onclick="flip()">Inicia sesión</span>
-                    </p>
-                </form>
-            </div>
-
+<div class="bg-gradient-to-r from-red-500 via-red-600 to-red-800 transition-all duration-500 min-h-screen flex items-center justify-center p-4">
+  <div class="max-w-[480px] w-full">
+    
+    <div class="p-6 sm:p-8 rounded-2xl bg-gray-100 border border-gray-200 shadow-sm">
+      <a href="#"><img src="img/amd-logo.png" alt="logo" class="w-24 mb-4 mx-auto block shadow-lg border-gray-900 border-2" /></a>
+      
+      <h1 id="form-title" class="text-slate-900 text-center text-3xl font-semibold">Inicia Sesión</h1>
+      
+      <form id="auth-form" class="mt-9 space-y-4" action="index.html">
+        <div>
+          <label class="text-slate-900 text-sm font-medium mb-2 block">Usuario</label>
+          <div class="relative flex items-center">
+            <input name="username" type="text" required class="w-full text-slate-900 text-sm border border-slate-300 px-4 py-3 pr-10 rounded-md outline-red-600" placeholder="Nombre de usuario" />
+            <i class="fa-solid fa-user absolute right-4 text-gray-400"></i>
+          </div>
         </div>
+
+        <div id="email-field" class="hidden">
+          <label class="text-slate-900 text-sm font-medium mb-2 block">Correo Electrónico</label>
+          <div class="relative flex items-center">
+            <input name="email" type="email" class="w-full text-slate-900 text-sm border border-slate-300 px-4 py-3 pr-10 rounded-md outline-red-600" placeholder="correo@ejemplo.com" />
+            <i class="fa-solid fa-envelope absolute right-4 text-gray-400"></i>
+          </div>
+        </div>
+
+        <div>
+          <label class="text-slate-900 text-sm font-medium mb-2 block">Contraseña</label>
+          <div class="relative flex items-center">
+            <input id="pass-input" name="password" type="password" required class="w-full text-slate-900 text-sm border border-slate-300 px-4 py-3 pr-10 rounded-md outline-red-600" placeholder="Contraseña" />
+            <button type="button" onclick="togglePass('pass-input', 'pass-icon')" class="absolute right-4 text-gray-400 hover:text-red-600 focus:outline-none">
+              <i id="pass-icon" class="fa-solid fa-eye"></i>
+            </button>
+          </div>
+        </div>
+
+        <div id="confirm-pass-field" class="hidden">
+          <label class="text-slate-900 text-sm font-medium mb-2 block">Confirmar Contraseña</label>
+          <div class="relative flex items-center">
+            <input id="confirm-pass-input" name="confirm_password" type="password" class="w-full text-slate-900 text-sm border border-slate-300 px-4 py-3 pr-10 rounded-md outline-red-600" placeholder="Repite tu contraseña" />
+            <button type="button" onclick="togglePass('confirm-pass-input', 'confirm-pass-icon')" class="absolute right-4 text-gray-400 hover:text-red-600 focus:outline-none">
+              <i id="confirm-pass-icon" class="fa-solid fa-eye"></i>
+            </button>
+          </div>
+        </div>
+
+        <div id="extra-options" class="flex flex-wrap items-center justify-between gap-4">
+          <div class="flex items-center">
+            <input id="remember-me" name="remember-me" type="checkbox" class="h-4 w-4 shrink-0 text-red-600 focus:ring-red-500 border-slate-300 rounded" />
+            <label for="remember-me" class="ml-3 block text-sm text-slate-900">Recuérdame</label>
+          </div>
+          <div class="text-sm">
+            <a href="#" class="text-red-600 hover:underline font-semibold">¿Olvidó su contraseña?</a>
+          </div>
+        </div>
+
+        <div class="!mt-10">
+          <button id="submit-btn" type="submit" class="w-full py-2 px-4 text-[15px] font-medium tracking-wide rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none transition duration-500">
+            Ingresar
+          </button>
+        </div>
+
+        <p class="text-slate-900 text-sm !mt-6 text-center">
+          <span id="footer-text">¿No tienes una cuenta?</span> 
+          <a href="javascript:void(0);" onclick="toggleView()" id="toggle-link" class="text-red-600 hover:underline ml-1 font-semibold">Regístrate aquí</a>
+        </p>
+      </form>
     </div>
+  </div>
+</div>
 
 <script>
-function flip() {
-    document.getElementById("card").classList.toggle("flipped");
-}
+  // Función genérica para mostrar/ocultar cualquier input de contraseña
+  function togglePass(inputId, iconId) {
+    const input = document.getElementById(inputId);
+    const icon = document.getElementById(iconId);
+    if (input.type === "password") {
+      input.type = "text";
+      icon.classList.replace('fa-eye', 'fa-eye-slash');
+    } else {
+      input.type = "password";
+      icon.classList.replace('fa-eye-slash', 'fa-eye');
+    }
+  }
+
+  let isLogin = true;
+
+  function toggleView() {
+    isLogin = !isLogin;
+    
+    // Elementos a cambiar
+    const title = document.getElementById('form-title');
+    const submitBtn = document.getElementById('submit-btn');
+    const footerText = document.getElementById('footer-text');
+    const toggleLink = document.getElementById('toggle-link');
+    
+    // Campos condicionales
+    const emailField = document.getElementById('email-field');
+    const confirmPassField = document.getElementById('confirm-pass-field');
+    const extraOptions = document.getElementById('extra-options');
+
+    if (isLogin) {
+      title.innerText = "Inicia Sesión";
+      submitBtn.innerText = "Ingresar";
+      footerText.innerText = "¿No tienes una cuenta?";
+      toggleLink.innerText = "Regístrate aquí";
+      
+      emailField.classList.add('hidden');
+      confirmPassField.classList.add('hidden');
+      extraOptions.classList.remove('hidden');
+    } else {
+      title.innerText = "Crea tu Cuenta";
+      submitBtn.innerText = "Registrar";
+      footerText.innerText = "¿Ya tienes cuenta?";
+      toggleLink.innerText = "Inicia sesión";
+      
+      emailField.classList.remove('hidden');
+      confirmPassField.classList.remove('hidden');
+      extraOptions.classList.add('hidden');
+    }
+  }
 </script>
 </body>
 </html>
-
