@@ -213,3 +213,18 @@
   }
 
 }
+/* Dark Mode Overrides */
+html.dark .producto {
+  background: #1f2937;
+  color: #f3f4f6;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.5);
+}
+html.dark .producto p {
+  color: #9ca3af;
+}
+html.dark .servicios-header p {
+  color: #9ca3af;
+}
+html.dark .producto.especial {
+  background: linear-gradient(135deg, #374151, #111827);
+}

@@ -1,29 +1,30 @@
 <!DOCTYPE html>
 <html lang="es" class="transition-colors duration-500">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Inicio</title>
-
-  <!-- Tailwind -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <script src="scripts/tailwind.js"></script>
-
-  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
   <link rel="icon" href="img/favicon.ico">
-
   <script>
     tailwind.config = {
       darkMode: 'class'
     }
   </script>
+      <style>
+        body { font-family: 'Inter', sans-serif; }
+        .chart-container { position: relative; height: 300px; width: 100%; }
+    </style>
 </head>
 
 <body class="bg-gray-200 text-gray-800 dark:bg-gray-900 dark:text-gray-200 transition-colors duration-500">
 
   <!-- NAV -->
-  <header class="sticky top-0 z-50 bg-gradient-to-r from-red-700 via-red-600 to-red-500 dark:from-red-800 dark:via-red-700 dark:to-red-600 shadow-md backdrop-blur-sm transition-all duration-500 text-white">
+ <header class="sticky top-0 z-50 bg-gradient-to-r from-red-700 via-red-600 to-red-500 dark:from-red-800 dark:via-red-700 dark:to-red-600 shadow-md backdrop-blur-sm transition-all duration-500 text-white">
   <nav class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
 
     <div class="flex-shrink-0">
@@ -77,64 +78,75 @@
 
     <main class="md:col-span-2 space-y-6 bg-white dark:bg-gray-800 p-4 rounded-xl shadow transition text-center">
       <h2 class="text-3xl font-bold">TOGETHER WE ADVANCE_</h2>
-      <h3 class="text-center mb-16 mt-2 text-2xl font-extrabold tracking-tight sm:text-3xl">"Construir productos excelentes que aceleren las experiencias informáticas de próxima generación."</h3>
+      <h3 class="text-center mb-16 mt-2 text-2xl font-extrabold tracking-tight sm:text-3xl">"Construir productos
+        excelentes que aceleren las experiencias informáticas de próxima generación."</h3>
       <div class="mt-4 max-w-3xl mx-auto h-1 bg-gradient-to-r from-transparent via-[#ED1C24] to-transparent"></div>
 
-<p class="leading-relaxed text-lg">AMD se centra en la excelencia del producto. No se trata solo de fabricar chips, sino de habilitar experiencias (gaming, ciencia, nube) que antes eran imposibles. La misión es el motor: acelerar el futuro.</p>
+      <p class="leading-relaxed text-lg">AMD se centra en la excelencia del producto. No se trata solo de fabricar
+        chips, sino de habilitar experiencias (gaming, ciencia, nube) que antes eran imposibles. La misión es el motor:
+        acelerar el futuro.</p>
 
       <h2 class="text-xl font-semibold">¿Qué encontrarás aquí?</h2>
       <p class="leading-relaxed text-lg">Recursos útiles, nuestros productos, servicios y soporte.</p>
 
       <h2 class="text-xl font-semibold">Nuestro compromiso</h2>
-      <p class="leading-relaxed text-lg">Trabajamos constantemente en mejorar el contenido para que siempre tengas acceso a información confiable, actualizada y bien presentada. Queremos que esta web sea un punto de referencia para quienes buscan aprender y crecer.</p>
+      <p class="leading-relaxed text-lg">Trabajamos constantemente en mejorar el contenido para que siempre tengas
+        acceso a información confiable, actualizada y bien presentada. Queremos que esta web sea un punto de referencia
+        para quienes buscan aprender y crecer.</p>
     </main>
 
     <aside class="space-y-6">
 
-      <h3 class="text-2xl font-semibold text-center bg-white py-3 shadow rounded-xl dark:bg-gray-800">
-        Productos más buscados
+      <h3 class="text-2xl font-semibold text-center bg-white py-3 px-2 shadow rounded-xl dark:bg-gray-800">
+        Productos más buscados 
       </h3>
 
 
-      <article class="group relative bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg border border-transparent hover:border-red-500/50 transition-all duration-500 hover:-translate-y-2">
-  <div class="absolute top-4 right-4 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded-full">NUEVO</div>
-  
-  <div class="overflow-hidden rounded-lg">
-    <img src="img/rx 9070xt.png" class="w-full h-48 object-contain transform group-hover:scale-110 transition-transform duration-500">
-  </div>
-  
-  <h4 class="font-bold mt-4 text-xl tracking-tight">Radeon™ RX 9070 XT</h4>
-  <p class="text-gray-500 dark:text-gray-400 text-sm mb-4">Arquitectura RDNA 4 avanzada.</p>
-  
-  <div class="flex items-center justify-between">
-    <span class="text-2xl font-black text-red-600">MSRP $649</span>
-    <a href="productos.html">
-    <button class="bg-gray-900 dark:bg-red-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-red-700 transition">
-      Ver mas
-    </button>
-  </a>
-  </div>
-</article>
+      <article
+        class="group relative bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg border border-transparent hover:border-red-500/50 transition-all duration-500 hover:-translate-y-2">
+        <div class="absolute top-4 right-4 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded-full">NUEVO</div>
+
+        <div class="overflow-hidden rounded-lg">
+          <img src="img/rx 9070xt.png"
+            class="w-full h-48 object-contain transform group-hover:scale-110 transition-transform duration-500">
+        </div>
+
+        <h4 class="font-bold mt-4 text-xl tracking-tight">Radeon™ RX 9070 XT</h4>
+        <p class="text-gray-500 dark:text-gray-400 text-sm mb-4">Arquitectura RDNA 4 avanzada.</p>
+
+        <div class="flex items-center justify-between">
+          <span class="text-2xl font-black text-red-600">MSRP $649</span>
+          <a href="productos.html">
+            <button
+              class="bg-gray-900 dark:bg-red-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-red-700 transition">
+              Ver mas
+            </button>
+          </a>
+        </div>
+      </article>
 
 
-<article class="group relative bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg border border-transparent hover:border-red-500/50 transition-all duration-500 hover:-translate-y-2">
-  <div class="absolute top-4 right-4 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded-full">NUEVO</div>
-  
-  <div class="overflow-hidden rounded-lg">
-    <img src="img/ryzen9.png" class="w-full h-48 object-contain transform group-hover:scale-110 transition-transform duration-500">
-  </div>
-  
-  <h4 class="font-bold mt-4 text-xl tracking-tight">Ryzen 9 9950X3D</h4>
-  <p class="text-gray-500 dark:text-gray-400 text-sm mb-4">Arquitectura RDNA 4 avanzada.</p>
-  
-  <div class="flex items-center justify-between">
-    <span class="text-2xl font-black text-red-600">MSRP $449</span>
-    <a href="productos.html">
-    <button class="bg-gray-900 dark:bg-red-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-red-700 transition">
-      Ver mas
-    </button>
-  </div>
-</article>
+      <article
+        class="group relative bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg border border-transparent hover:border-red-500/50 transition-all duration-500 hover:-translate-y-2">
+        <div class="absolute top-4 right-4 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded-full">NUEVO</div>
+
+        <div class="overflow-hidden rounded-lg">
+          <img src="img/ryzen9.png"
+            class="w-full h-48 object-contain transform group-hover:scale-110 transition-transform duration-500">
+        </div>
+
+        <h4 class="font-bold mt-4 text-xl tracking-tight">Ryzen 9 9950X3D</h4>
+        <p class="text-gray-500 dark:text-gray-400 text-sm mb-4">Arquitectura RDNA 4 avanzada.</p>
+
+        <div class="flex items-center justify-between">
+          <span class="text-2xl font-black text-red-600">MSRP $449</span>
+          <a href="productos.html">
+            <button
+              class="bg-gray-900 dark:bg-red-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-red-700 transition">
+              Ver mas
+            </button>
+        </div>
+      </article>
 
 
     </aside>
@@ -162,66 +174,67 @@
       }
     });
 
-  
+
   </script>
-      <script>
-        // Lógica de Gráficos
-        document.addEventListener('DOMContentLoaded', () => {
-            const isDark = document.documentElement.classList.contains('dark');
-            const textColor = isDark ? '#fff' : '#666';
+  <script>
+    // Lógica de Gráficos
+    document.addEventListener('DOMContentLoaded', () => {
+      const isDark = document.documentElement.classList.contains('dark');
+      const textColor = isDark ? '#fff' : '#666';
 
-            new Chart(document.getElementById('revenueMixChart'), {
-                type: 'doughnut',
-                data: {
-                    labels: ['Data Center', 'Client', 'Gaming', 'Embedded'],
-                    datasets: [{
-                        data: [50, 25, 15, 10],
-                        backgroundColor: ['#ED1C24', '#444', '#718096', '#CBD5E0'],
-                        borderWidth: 0
-                    }]
-                },
-                options: { 
-                    maintainAspectRatio: false,
-                    plugins: { legend: { labels: { color: '#fff' } } }
-                }
-            });
+      new Chart(document.getElementById('revenueMixChart'), {
+        type: 'doughnut',
+        data: {
+          labels: ['Data Center', 'Client', 'Gaming', 'Embedded'],
+          datasets: [{
+            data: [50, 25, 15, 10],
+            backgroundColor: ['#ED1C24', '#444', '#718096', '#CBD5E0'],
+            borderWidth: 0
+          }]
+        },
+        options: {
+          maintainAspectRatio: false,
+          plugins: { legend: { labels: { color: '#fff' } } }
+        }
+      });
 
-            new Chart(document.getElementById('growthChart'), {
-                type: 'line',
-                data: {
-                    labels: ['2020', '2022', '2024', '2026'],
-                    datasets: [{
-                        label: 'Ingresos ($B)',
-                        data: [1.7, 6.0, 12.0, 15.5],
-                        borderColor: '#ED1C24',
-                        tension: 0.4,
-                        fill: true,
-                        backgroundColor: 'rgba(237, 28, 36, 0.1)'
-                    }]
-                },
-                options: { 
-                    maintainAspectRatio: false,
-                    scales: { 
-                        y: { ticks: { color: '#aaa' } },
-                        x: { ticks: { color: '#aaa' } }
-                    }
-                }
-            });
-        });
+      new Chart(document.getElementById('growthChart'), {
+        type: 'line',
+        data: {
+          labels: ['2020', '2022', '2024', '2026'],
+          datasets: [{
+            label: 'Ingresos ($B)',
+            data: [1.7, 6.0, 12.0, 15.5],
+            borderColor: '#ED1C24',
+            tension: 0.4,
+            fill: true,
+            backgroundColor: 'rgba(237, 28, 36, 0.1)'
+          }]
+        },
+        options: {
+          maintainAspectRatio: false,
+          scales: {
+            y: { ticks: { color: '#aaa' } },
+            x: { ticks: { color: '#aaa' } }
+          }
+        }
+      });
+    });
 
-        // Dark Mode Toggle
-        const darkBtn = document.getElementById("darkBtn");
-        darkBtn.addEventListener("click", () => {
-            document.documentElement.classList.toggle("dark");
-            // Cambiar icono
-            const icon = darkBtn.querySelector('i');
-            if(document.documentElement.classList.contains('dark')) {
-                icon.classList.replace('fa-moon', 'fa-sun');
-            } else {
-                icon.classList.replace('fa-sun', 'fa-moon');
-            }
-        });
-    </script>
+    // Dark Mode Toggle
+    const darkBtn = document.getElementById("darkBtn");
+    darkBtn.addEventListener("click", () => {
+      document.documentElement.classList.toggle("dark");
+      // Cambiar icono
+      const icon = darkBtn.querySelector('i');
+      if (document.documentElement.classList.contains('dark')) {
+        icon.classList.replace('fa-moon', 'fa-sun');
+      } else {
+        icon.classList.replace('fa-sun', 'fa-moon');
+      }
+    });
+  </script>
 
 </body>
+
 </html>

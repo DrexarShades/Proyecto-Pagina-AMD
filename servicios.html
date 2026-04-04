@@ -70,9 +70,9 @@
   </div>
 </header>
 
-<main class="bg-white rounded-2xl">
+<main class= "rounded-2xl min-h-screen transition-colors duration-500">
 
-<section class="servicios-container bg-white">
+<section class="servicios-container bg-white dark:bg-gray-900">
 <h1 class="text-3xl font-bold mb-5">Servicios Disponibles</h1>
   <div class="servicio">
     <div class="servicio-titulo">Controladores (Drivers) y Software</div>
@@ -143,6 +143,18 @@
         mobileMenu.classList.add("max-h-0");
         mobileMenu.classList.remove("max-h-96");
       }
+    });
+
+    const darkBtn = document.getElementById("darkBtn");
+    darkBtn.addEventListener("click", () => {
+        document.documentElement.classList.toggle("dark");
+        // Cambiar icono
+        const icon = darkBtn.querySelector('i');
+        if(document.documentElement.classList.contains('dark')) {
+            icon.classList.replace('fa-moon', 'fa-sun');
+        } else {
+            icon.classList.replace('fa-sun', 'fa-moon');
+        }
     });
 
   </script>
