@@ -32,7 +32,7 @@ body {
 /* ========================= */
 
 .servicios-container {
-  max-width: 900px;
+  max-width: 90%;
   width: 90%;
   margin: 60px auto;
   background: #ffffff75;
@@ -99,3 +99,4 @@ main {
 main h1{
     text-align: center;
 }
+
