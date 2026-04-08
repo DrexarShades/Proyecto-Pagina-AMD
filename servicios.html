@@ -8,7 +8,7 @@
 <script src="scripts/tailwind1.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-
+    <link rel="icon" href="img/favicon.ico">
     <script>
         tailwind.config = {
             darkMode: 'class'
@@ -70,51 +70,69 @@
   </div>
 </header>
 
-<main class= "rounded-2xl min-h-screen transition-colors duration-500">
+<main class= "rounded-2xl min-h-screen transition-colors duration-500 py-8">
 
 <section class="servicios-container bg-white dark:bg-gray-900">
-<h1 class="text-3xl font-bold mb-5">Servicios Disponibles</h1>
-  <div class="servicio">
-    <div class="servicio-titulo">Controladores (Drivers) y Software</div>
-    <div class="servicio-contenido">
-      Soporte para mejorar el rendimiento de tarjetas gráficas Radeon y procesadores.
-      Incluye herramientas de optimización como la utilidad de overclocking Ryzen Master
-      y el software de IA ROCm.
-<br>
-      <a href="https://www.amd.com/en/support/download/drivers.html" title="Acceso a las descargas de drivers">https://www.amd.com/en/support/download/drivers.html</a>
+  <div class="text-center mb-8">
+    <h1 class="text-4xl font-bold mb-3 text-red-700 dark:text-red-500">¡Descubre Nuestros Servicios!</h1>
+    <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+      En AMD, estamos aquí para ayudarte a llevar tu equipo al siguiente nivel. Ya sea que busques dominar en tus juegos, potenciar tu centro de datos o crear soluciones innovadoras, ¡tenemos exactamente lo que necesitas!
+    </p>
+  </div>
+
+  <div class="servicio border border-transparent dark:border-gray-700">
+    <div class="servicio-titulo text-lg flex items-center gap-3">
+      <i class="fa-solid fa-download"></i> Controladores (Drivers) y Software
+    </div>
+    <div class="servicio-contenido dark:bg-gray-800 dark:text-gray-200">
+      <p class="mb-4">¡Mantén tu equipo siempre actualizado y al máximo rendimiento! Te ofrecemos todo el soporte necesario para tus tarjetas gráficas Radeon y procesadores Ryzen.</p>
+      <p class="mb-4">Además, podrás disfrutar de herramientas increíbles como <strong>Ryzen Master</strong> para exprimir al máximo tu procesador, y la plataforma <strong>ROCm</strong> para tus proyectos de Inteligencia Artificial.</p>
+      <a href="https://www.amd.com/en/support/download/drivers.html" class="inline-flex items-center gap-2 text-red-600 dark:text-red-400 hover:text-red-800 dark:hover:text-red-300 font-semibold" target="_blank" title="Acceso a las descargas de drivers">
+        <i class="fa-solid fa-arrow-right"></i> ¡Descarga tus drivers aquí!
+      </a>
     </div>
   </div>
 
-  <div class="servicio">
-    <div class="servicio-titulo">Centro de Datos y Nube</div>
-    <div class="servicio-contenido">
-      Soluciones con procesadores EPYC y aceleradores de GPU para computación de alto
-      rendimiento, seguridad y, en el sector financiero, cifrado de memoria en tiempo real.
+  <div class="servicio border border-transparent dark:border-gray-700">
+    <div class="servicio-titulo text-lg flex items-center gap-3">
+      <i class="fa-solid fa-server"></i> Centro de Datos y Nube
+    </div>
+    <div class="servicio-contenido dark:bg-gray-800 dark:text-gray-200">
+      <p class="mb-4">Lleva tu infraestructura empresarial al futuro. Con nuestros procesadores <strong>EPYC</strong> y aceleradores de GPU, te brindamos un rendimiento inigualable para tus cargas de trabajo más exigentes.</p>
+      <p>Nos enorgullece ofrecer seguridad de clase mundial, incluyendo cifrado de memoria en tiempo real, ideal para finanzas y protección de datos críticas. ¡Tu información siempre estará segura!</p>
     </div>
   </div>
 
-  <div class="servicio">
-    <div class="servicio-titulo">Gaming e Inteligencia Artificial</div>
-    <div class="servicio-contenido">
-      Tecnologías de juego para PC y portátiles, incluyendo gráficos Radeon y soluciones
-      de IA (Ryzen AI) para mejorar la experiencia de juego y productividad.
+  <div class="servicio border border-transparent dark:border-gray-700">
+    <div class="servicio-titulo text-lg flex items-center gap-3">
+      <i class="fa-solid fa-gamepad"></i> Gaming e Inteligencia Artificial
+    </div>
+    <div class="servicio-contenido dark:bg-gray-800 dark:text-gray-200">
+      <p class="mb-4">¡Prepárate para jugar como nunca antes! Nuestras tecnologías impulsan las mejores PCs y consolas del mundo.</p>
+      <p>Gracias a los gráficos Radeon y a la magia de <strong>Ryzen AI</strong>, no solo disfrutarás de gráficos impresionantes y tasas de cuadros altísimas, sino que también potenciarás tu creatividad y productividad con Inteligencia Artificial directamente en tu dispositivo.</p>
     </div>
   </div>
 
-  <div class="servicio">
-    <div class="servicio-titulo">Soporte y Recursos</div>
-    <div class="servicio-contenido">
-      Servicios de garantía, descargas técnicas, documentación y recursos para
-      desarrolladores de software y hardware, incluyendo plataformas como Vitis
-      para aplicaciones embebidas.
-    <a href="https://www.amd.com/en/support.html" title="Soporte AMD">https://www.amd.com/en/support.html</a>  
+  <div class="servicio border border-transparent dark:border-gray-700">
+    <div class="servicio-titulo text-lg flex items-center gap-3">
+      <i class="fa-solid fa-headset"></i> Soporte y Recursos
+    </div>
+    <div class="servicio-contenido dark:bg-gray-800 dark:text-gray-200">
+      <p class="mb-4">¡Nunca estarás solo! Nuestro equipo está siempre listo para respaldarte en cada paso.</p>
+      <p class="mb-4">Encuentra todo sobre garantías, documentación técnica detallada y recursos hiper valiosos para desarrolladores de software y hardware (como nuestra plataforma Vitis para aplicaciones embebidas).</p>
+      <a href="https://www.amd.com/en/support.html" class="inline-flex items-center gap-2 text-red-600 dark:text-red-400 hover:text-red-800 dark:hover:text-red-300 font-semibold" target="_blank" title="Soporte AMD">
+        <i class="fa-solid fa-arrow-right"></i> Visita nuestro Centro de Soporte
+      </a>  
     </div>
   </div>
 
-  <div class="servicio">
-    <div class="servicio-titulo">Soluciones Integradas</div>
-    <div class="servicio-contenido">
-      Hardware y software para sistemas embebidos, incluyendo FPGAs y SoCs adaptables.
+  <div class="servicio border border-transparent dark:border-gray-700">
+    <div class="servicio-titulo text-lg flex items-center gap-3">
+      <i class="fa-solid fa-microchip"></i> Soluciones Integradas
+    </div>
+    <div class="servicio-contenido dark:bg-gray-800 dark:text-gray-200">
+      <p class="mb-4">Creamos la tecnología que impulsa el mundo conectando el hardware y software de maneras innovadoras.</p>
+      <p>Descubre nuestros sistemas embebidos, FPGAs y SoCs adaptables, diseñados para ofrecer máxima flexibilidad y potencia. ¡Imagina todo lo que podemos construir juntos!</p>
     </div>
   </div>
 
