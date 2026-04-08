@@ -39,6 +39,7 @@ body {
   padding: 60px 40px;
   border-radius: 20px;
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.22);
+  transition: all 0.3s ease;
 }
 
 .servicio {
