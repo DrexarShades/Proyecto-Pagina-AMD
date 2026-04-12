@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -10,7 +11,26 @@
     <link rel="icon" href="img/favicon.ico">
     <script>
         tailwind.config = {
-            darkMode: 'class'
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    animation: {
+                        'gradient-x': 'gradient-x 15s ease infinite',
+                    },
+                    keyframes: {
+                        'gradient-x': {
+                            '0%, 100%': {
+                                'background-size': '200% 200%',
+                                'background-position': 'left center'
+                            },
+                            '50%': {
+                                'background-size': '200% 200%',
+                                'background-position': 'right center'
+                            }
+                        }
+                    }
+                }
+            }
         }
     </script>
     <style>
@@ -18,23 +38,24 @@
         .chart-container { position: relative; height: 300px; width: 100%; }
     </style>
 </head>
-<body class="antialiased bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-500">
-
+<body class="antialiased bg-gradient-to-r bg-opacity-50  text-gray-900 dark:text-gray-100 transition-colors duration-500 min-h-screen">
+<div class="background"></div>
+<div class="glow"></div>
      <header class="sticky top-0 z-50 bg-gradient-to-r from-red-700 via-red-600 to-red-500 dark:from-red-800 dark:via-red-700 dark:to-red-600 shadow-md backdrop-blur-sm transition-all duration-500 text-white">
   <nav class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
 
     <div class="flex-shrink-0">
       <a href="index.html">
-        <img src="img/amd-logo.png" class="h-10" alt="Logo">
+        <img src="img/amd-logo.png" class="h-10 block" alt="Logo">
       </a>
     </div>
 
     <ul class="hidden md:flex gap-12 font-medium mx-auto">
-      <li><a href="index.html" class="hover:text-gray-300 transition">Inicio</a></li>
-      <li><a href="nosotros.html" class="hover:text-gray-300 transition">Nosotros</a></li>
-      <li><a href="productos.html" class="hover:text-gray-300 transition">Productos</a></li>
-      <li><a href="servicios.html" class="hover:text-gray-300 transition">Servicios</a></li>
-      <li><a href="contacto.html" class="hover:text-gray-300 transition">Contacto</a></li>
+      <li class="hover:scale-110 transition-all duration-300"><a href="index.html" class="hover:text-gray-300 transition">Inicio</a></li>
+      <li class="hover:scale-110 transition-all duration-300"><a href="nosotros.html" class="hover:text-gray-300 transition">Nosotros</a></li>
+      <li class="hover:scale-110 transition-all duration-300"><a href="productos.html" class="hover:text-gray-300 transition">Productos</a></li>
+      <li class="hover:scale-110 transition-all duration-300"><a href="servicios.html" class="hover:text-gray-300 transition">Servicios</a></li>
+      <li class="hover:scale-110 transition-all duration-300"><a href="contacto.html" class="hover:text-gray-300 transition">Contacto</a></li>
     </ul>
 
     <div class="flex items-center gap-4">
@@ -77,8 +98,8 @@
   </div>
 
   <section class="categoria">
-    <h2 class="font-medium text-center">Placas de video</h2>
-
+    <h2 class="font-bold text-center">Placas de video</h2>
+    <div class="mb-4 max-w-3xl mx-auto h-1 bg-gradient-to-r from-transparent via-[#ED1C24] to-transparent"></div>
     <div class="grid-productos">
       <article class="producto justify-center content-center">
         <img src="img/rx 9070xt.png" alt="RX 9070XT">
@@ -86,7 +107,7 @@
         <span class="precio">MSRP $1149</span>
 
         <div class="producto-info-placas">
-          <h3">RX 9070XT</h3>
+          <h3>RX 9070XT</h3>
           <p><strong>Arquitectura:</strong> RDNA 4</p>
           <p><strong>VRAM:</strong> 16GB GDDR6</p>
           <p><strong>Uso ideal:</strong> Gaming 4K alto rendimiento</p>
@@ -159,7 +180,7 @@
   </section>
 
   <section class="categoria">
-    <h2 class="font-medium text-center">Procesadores</h2>
+    <h2 class="font-bold text-center">Procesadores</h2>
 
     <div class="grid-productos">
       <article class="producto">

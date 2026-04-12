@@ -1,3 +1,67 @@
+body {
+    margin: 0;
+    height: 100vh;
+    background: #0a0a0a;
+    font-family: sans-serif;
+}
+
+/* Capa base */
+.background {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, #efefef, #d5d5d5);
+    z-index: -2;
+}
+
+/* Líneas animadas tipo circuito */
+.background::before,
+.background::after {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background-image: 
+        linear-gradient(90deg, rgba(255, 69, 0, 0.1) 1px, transparent 2px),
+        linear-gradient(rgba(255, 69, 0, 0.1) 1px, transparent 2px);
+    background-size: 60px 60px;
+    animation: moveGrid 20s linear infinite;
+}
+
+.background::after {
+    animation-direction: reverse;
+    opacity: 0.4;
+}
+
+/* Animación */
+@keyframes moveGrid {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(-60px, -60px);
+    }
+}
+
+/* Brillo pulsante tipo energía */
+.glow {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(255, 69, 0, 0.15), transparent 70%);
+    animation: pulse 4s ease-in-out infinite;
+    z-index: -1;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
 .servicios {
   max-width: 1200px;
   margin: auto;
