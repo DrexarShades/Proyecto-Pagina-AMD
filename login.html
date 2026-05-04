@@ -81,7 +81,23 @@
     </div>
   </div>
 </div>
+<!-- animacion al presionar registrar o iniciar sesion  -->
+<style>
+  .fade-in-form {
+    animation: fadeInForm 0.5s ease-out forwards;
+  }
 
+  @keyframes fadeInForm {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
 <script>
   // Función genérica para mostrar/ocultar cualquier input de contraseña
   function togglePass(inputId, iconId) {
@@ -106,11 +122,17 @@
     const submitBtn = document.getElementById('submit-btn');
     const footerText = document.getElementById('footer-text');
     const toggleLink = document.getElementById('toggle-link');
+    const authForm = document.getElementById('auth-form');
     
     // Campos condicionales
     const emailField = document.getElementById('email-field');
     const confirmPassField = document.getElementById('confirm-pass-field');
     const extraOptions = document.getElementById('extra-options');
+
+    // Aplicar animación
+    authForm.classList.remove('fade-in-form');
+    void authForm.offsetWidth; // Trigger reflow
+    authForm.classList.add('fade-in-form');
 
     if (isLogin) {
       title.innerText = "Inicia Sesión";
